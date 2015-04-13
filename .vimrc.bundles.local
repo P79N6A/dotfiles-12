@@ -1,0 +1,7 @@
+Bundle "vim-jsx"
+
+" vim-react-snippets: 有两个已经装过了的
+Bundle "justinj/vim-react-snippets"
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
