@@ -3,10 +3,10 @@ set tabstop=2
 set softtabstop=2
 set wrap
 
-"disable index_guides
-let g:indent_guides_auto_colors = 0
+"disable index_guides 在Vim里显示不好,所以干脆禁用掉了
+"let g:indent_guides_auto_colors = 0
 
-"for react jsx
+"for react jsx, JSX in .js files
 let g:jsx_ext_required = 0
 
 "使用左右光标键切换 buffer
