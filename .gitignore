@@ -11,8 +11,6 @@
 .gem
 .git
 .gitconfig
-.gitignore_global
-.hgignore_global
 .ionic
 .node-gyp
 .npm
