@@ -43,4 +43,8 @@ Public
 VirtualBox VMs
 lib
 vendor
-
+.oh-my-zsh/
+.zcompdump-Amber Mac (3)-5.0.5
+.zsh-update
+.zsh_history
+.zshrc-e
