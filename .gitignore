@@ -48,3 +48,4 @@ vendor
 .zsh-update
 .zsh_history
 .zshrc-e
+.npmrc
