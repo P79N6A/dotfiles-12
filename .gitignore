@@ -49,3 +49,4 @@ vendor
 .zsh_history
 .zshrc-e
 .npmrc
+.cups/
