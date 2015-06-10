@@ -13,6 +13,7 @@ alias cnpm="npm --registry=http://r.cnpmjs.org \
   --userconfig=$HOME/.cnpmrc"
 
 alias server='python -m SimpleHTTPServer'
+alias pa='/Users/bopeng/Library/Mobile\ Documents/com~apple~CloudDocs/pa/scripts/login.sh'
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
