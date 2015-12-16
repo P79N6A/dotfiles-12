@@ -51,3 +51,14 @@ vendor
 .zshrc-e
 .npmrc
 .cups/
+.vscode
+.wireshark-etc/
+.wireshark/
+AndroidStudioProjects/
+.android/
+.gradle/
+.pm2/
+.strong-pm/
+.oracle_jre_usage/
+weiyun
+.fontconfig/
