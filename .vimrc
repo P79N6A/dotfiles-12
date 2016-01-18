@@ -22,7 +22,7 @@ set incsearch " 在输入要搜索的文字时，vim会实时匹配
 set shiftwidth=2 " 默认缩进2个空格
 set tabstop=2 " 制表符占2个空格 
 set softtabstop=2 " 敲入tab键时实际占有的列数
-set smartindent " 把当前行的对齐格式应用到下一行
+"set smartindent " 把当前行的对齐格式应用到下一行
 set expandtab " 用spaces替换tabs
 set smarttab " 自动缩进
 set nowrap " 不要换行
@@ -55,12 +55,12 @@ noremap <silent> <Right> :bn<CR>
 " 使用系统剪切板
 vmap y :w !pbcopy<CR><CR>
 nmap yy :.w !pbcopy<CR><CR>
-nmap p :r !pbpaste<CR><CR>
+" nmap p :r !pbpaste<CR><CR>
 
 
 """""""""""""""""""""
-" Vundle插件相关
-"""""""""""""""""""""
+"" Vundle插件相关
+""""""""""""""""""""""
 filetype off " required
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
 call vundle#begin()
@@ -82,7 +82,7 @@ Bundle 'The-NERD-tree'
 Bundle 'scrooloose/nerdcommenter' 
 
 " git
-"Bundle 'tpope/vim-fugitive'
+" Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
   let g:gitgutter_realtimeltime = 1
   let g:gitgutter_eager = 1
@@ -90,14 +90,13 @@ Bundle 'airblade/vim-gitgutter'
 "Bundle 'AutoClose' 
 
 " 代码自动补全
-"Bundle 'Valloric/YouCompleteMe'
-
-" 全局搜索
-Bundle 'kien/ctrlp.vim'
-  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
+Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'bling/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
+" 设置状态栏(不要忘了rtp配置)
+"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 " 保证关闭buffer的时候不关闭当前窗口
 Bundle 'qpkorr/vim-bufkill'
   map <C-c> :BD<cr>
@@ -106,30 +105,25 @@ Bundle 'qpkorr/vim-bufkill'
 Bundle 'Lokaltog/vim-easymotion'
 
 " 全局搜索
+Bundle 'kien/ctrlp.vim'
+  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
 Bundle 'EasyGrep'
-" 语法检查  
+  let g:EasyGrepCommand = 1
+  let g:EasyGrepRecursive  = 1 " Recursive searching
+  " 只有在EasyGrepCommand = 1的时候才有用
+  let g:EasyGrepFilesToExclude = 'node_modules,.git/*,static,dist'
+" 语法检查(打开有性能问题)  
 " Bundle 'scrooloose/syntastic'
-  let g:syntastic_check_on_open = 1  
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_warning_symbol='>'
-" 设置状态栏(不要忘了rtp配置)
-"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
-"Bundle 'pangloss/vim-javascript'
+  "let g:syntastic_check_on_open = 1  
+  "let g:syntastic_javascript_checkers = ['eslint']
+  "let g:syntastic_warning_symbol='>'
 
 " React相关
   Bundle 'mxw/vim-jsx'
     "for react jsx, JSX in .js files
     let g:jsx_ext_required = 0
-
-  " vim-react-snippets:
-  Bundle "justinj/vim-react-snippets"
-  " SnipMate and its dependencies:
-  Bundle "MarcWeber/vim-addon-mw-utils"
-  Bundle "tomtom/tlib_vim"
-  Bundle "garbas/vim-snipmate"
-  " Other sets of snippets (optional):
-  Bundle "honza/vim-snippets"
+    " Required by vim-jsx
+    Bundle 'pangloss/vim-javascript'
 
 
 call vundle#end() " required
