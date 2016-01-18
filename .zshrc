@@ -7,15 +7,12 @@ export ZSH=/Users/bopeng/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-alias cnpm="npm --registry=http://r.cnpmjs.org \
-  --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=http://cnpmjs.org/dist \
-  --userconfig=$HOME/.cnpmrc"
-
-alias server='python -m SimpleHTTPServer'
-alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -85,3 +82,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias cnpm="npm --registry=http://r.cnpmjs.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=http://cnpmjs.org/dist \
+  --userconfig=$HOME/.cnpmrc"
+
+alias server='python -m SimpleHTTPServer'
+alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
+
