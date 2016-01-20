@@ -6,8 +6,10 @@ set autoread " Set to auto read when a file is changed from the outside
 " 显示相关
 syntax on " 语法高亮
 " 主题
+set background=dark
 colorscheme molokai
 set number " 显示行号
+set relativenumber
 set cursorline " 突出显示当前行
 "set cursorcolumn " 突出显示当前列
 set ruler " 显示ruler
@@ -17,18 +19,20 @@ set wildmenu " Ex模式下自动补全添加单行菜单提
 
 set hlsearch " 高亮搜索
 set incsearch " 在输入要搜索的文字时，vim会实时匹配
+set ignorecase " 忽略大小写
+set smartcase " 大小写非必敏感, 与ignorecase并用
 
 " 排版,缩进相关
 set shiftwidth=2 " 默认缩进2个空格
 set tabstop=2 " 制表符占2个空格 
 set softtabstop=2 " 敲入tab键时实际占有的列数
-"set smartindent " 把当前行的对齐格式应用到下一行
+set autoindent smartindent shiftround "缩进配置
 set expandtab " 用spaces替换tabs
 set smarttab " 自动缩进
 set nowrap " 不要换行
 set scrolloff=7 " 往上下移动到头的时候有7行的缓冲
-
-" Configure backspace so it acts as it should act
+"set list listchars=eol:¬,tab:▸\ ,trail:.,
+" Configure backspace so it cts s it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
@@ -47,14 +51,24 @@ let mapleader=","
 noremap <silent> <Left> :bp<CR>
 noremap <silent> <Right> :bn<CR>
 
-
+" 使用tab启动autocomplete(废弃,已经使用YouCompleteMe)
+"function! Tab_Or_Complete()
+"  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+"    return "\<C-N>"
+"  else
+"    return "\<Tab>"
+"  endif
+"endfunction
+"inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 "noremap <silent> <C-S> :update<CR>
 "vnoremap <silent> <C-S>         <C-C>:update<CR>
 "inoremap <silent> <C-S>         <C-O>:update<CR>
 
 " 使用系统剪切板
-vmap y :w !pbcopy<CR><CR>
-nmap yy :.w !pbcopy<CR><CR>
+set clipboard=unnamed
+"vmap y :w !pbcopy<CR><CR>
+"nmap yy :.w !pbcopy<CR><CR>
+
 " nmap p :r !pbpaste<CR><CR>
 
 
@@ -70,12 +84,12 @@ Bundle 'The-NERD-tree'
   " open nerdtree by default
   "autocmd StdinReadPre * let s:std_in=1
   "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-  
+  let NERDTreeMinimalUI = 1 " 不显示帮助面板
+  let g:NERDTreeHijackNetrw=0 
   map <C-n> :NERDTreeToggle<CR>
-  let g:NERDTreeDirArrowExpandable = '▸'
-  let g:NERDTreeDirArrowCollapsible = '▾'
   " active only one nerdtree
   Bundle 'jistr/vim-nerdtree-tabs'
+    let g:nerdtree_tabs_open_on_gui_startup = 0
   " close vim if the only window left open is a NERDTree
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   Bundle 'Xuyuanp/nerdtree-git-plugin'
@@ -91,10 +105,13 @@ Bundle 'airblade/vim-gitgutter'
 
 " 代码自动补全
 Bundle 'Valloric/YouCompleteMe'
+  "Bundle "marijnh/tern_for_vim"
 
+  
+" 设置状态栏
 Bundle 'bling/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
-" 设置状态栏(不要忘了rtp配置)
+"(不要忘了rtp配置)
 "Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " 保证关闭buffer的时候不关闭当前窗口
