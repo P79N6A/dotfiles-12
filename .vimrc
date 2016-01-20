@@ -9,7 +9,7 @@ syntax on " 语法高亮
 set background=dark
 colorscheme molokai
 set number " 显示行号
-set relativenumber
+"set relativenumber
 set cursorline " 突出显示当前行
 "set cursorcolumn " 突出显示当前列
 set ruler " 显示ruler
@@ -100,6 +100,8 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'airblade/vim-gitgutter'
   let g:gitgutter_realtimeltime = 1
   let g:gitgutter_eager = 1
+" relative number and absolute number
+Bundle 'myusuf3/numbers.vim'
 " 自动帮你补全括号
 "Bundle 'AutoClose' 
 
@@ -130,11 +132,11 @@ Bundle 'EasyGrep'
   " 只有在EasyGrepCommand = 1的时候才有用
   let g:EasyGrepFilesToExclude = 'node_modules,.git/*,static,dist'
 " 语法检查(打开有性能问题)  
-" Bundle 'scrooloose/syntastic'
-  "let g:syntastic_check_on_open = 1  
-  "let g:syntastic_javascript_checkers = ['eslint']
-  "let g:syntastic_warning_symbol='>'
-
+Bundle 'scrooloose/syntastic'
+  let g:syntastic_check_on_open = 1  
+  let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_warning_symbol='>'
+  Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 " React相关
   Bundle 'mxw/vim-jsx'
     "for react jsx, JSX in .js files

@@ -90,5 +90,5 @@ alias cnpm="npm --registry=http://r.cnpmjs.org \
 
 alias server='python -m SimpleHTTPServer'
 alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
-
+alias vi='vim --noplugin'
 export PATH="/usr/local/sbin:$PATH"
