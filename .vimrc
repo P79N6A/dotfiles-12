@@ -48,8 +48,8 @@ set hidden
 let mapleader=","
 
 "使用左右光标键切换 buffer
-noremap <silent> <Left> :bp<CR>
-noremap <silent> <Right> :bn<CR>
+noremap <silent> <C-Left> :bp<CR>
+noremap <silent> <C-Right> :bn<CR>
 
 " 使用tab启动autocomplete(废弃,已经使用YouCompleteMe)
 "function! Tab_Or_Complete()
@@ -95,6 +95,9 @@ Bundle 'The-NERD-tree'
   Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'scrooloose/nerdcommenter' 
 
+" indentLine
+Bundle 'Yggdroot/indentLine'
+
 " git
 " Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
@@ -109,6 +112,8 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'Valloric/YouCompleteMe'
   "Bundle "marijnh/tern_for_vim"
 
+" Autobuild
+"Bundle 'tpope/vim-dispatch'
   
 " 设置状态栏
 Bundle 'bling/vim-airline'
@@ -124,33 +129,40 @@ Bundle 'qpkorr/vim-bufkill'
 Bundle 'Lokaltog/vim-easymotion'
 
 " 全局搜索
+Bundle 'ag.vim'
+  "let g:ag_working_path_mode="r"
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+  let g:ag_apply_qmappings=0
+  let g:ag_highlight=1
 Bundle 'kien/ctrlp.vim'
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
-Bundle 'EasyGrep'
-  let g:EasyGrepCommand = 1
-  let g:EasyGrepRecursive  = 1 " Recursive searching
-  " 只有在EasyGrepCommand = 1的时候才有用
-  let g:EasyGrepFilesToExclude = 'node_modules,.git/*,static,dist'
-" 语法检查(打开有性能问题)  
-Bundle 'scrooloose/syntastic'
-  let g:syntastic_check_on_open = 1  
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_warning_symbol='>'
-  Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
+" 已用ag + the_silver_searcher 替代
+"Bundle 'EasyGrep'
+  "let g:EasyGrepCommand = 1
+  "let g:EasyGrepRecursive  = 1 " Recursive searching
+  "" 只有在EasyGrepCommand = 1的时候才有用
+  "let g:EasyGrepFilesToExclude = 'node_modules,.git/*,static,dist'
+"" 语法检查(打开有性能问题)  
+"Bundle 'scrooloose/syntastic'
+  "let g:syntastic_check_on_open = 1  
+  "let g:syntastic_javascript_checkers = ['eslint']
+  "let g:syntastic_warning_symbol='>'
+  "" 部分解决syntastic性能问题
+"  Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 " React相关
   Bundle 'mxw/vim-jsx'
     "for react jsx, JSX in .js files
     let g:jsx_ext_required = 0
     " Required by vim-jsx
     Bundle 'pangloss/vim-javascript'
-
+  " vim-react-snippets:
+   "Bundle "justinj/vim-react-snippets"
+  
+  " SnipMate and its dependencies:
+   "Bundle "MarcWeber/vim-addon-mw-utils"
+   "Bundle "tomtom/tlib_vim"
+   "Bundle "garbas/vim-snipmate"
 
 call vundle#end() " required
 filetype plugin indent on " required
-
-
-
-"disable index_guides 在Vim里显示不好,所以干脆禁用掉了
-"let g:indent_guides_auto_colors = 0
-
 
