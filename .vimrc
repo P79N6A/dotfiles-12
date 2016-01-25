@@ -144,10 +144,10 @@ Bundle 'kien/ctrlp.vim'
   "let g:EasyGrepFilesToExclude = 'node_modules,.git/*,static,dist'
 "" 语法检查(打开有性能问题)  
 "Bundle 'scrooloose/syntastic'
-  "let g:syntastic_check_on_open = 1  
-  "let g:syntastic_javascript_checkers = ['eslint']
-  "let g:syntastic_warning_symbol='>'
-  "" 部分解决syntastic性能问题
+"  let g:syntastic_check_on_open = 1  
+"  let g:syntastic_javascript_checkers = ['eslint']
+"  let g:syntastic_warning_symbol='>'
+  " 部分解决syntastic性能问题
 "  Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 " React相关
   Bundle 'mxw/vim-jsx'
