@@ -109,8 +109,13 @@ Bundle 'myusuf3/numbers.vim'
 "Bundle 'AutoClose' 
 
 " 代码自动补全
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
+ " let g:ycm_server_use_vim_stdout = 1
+ " let g:ycm_server_log_level = 'debug'
   "Bundle "marijnh/tern_for_vim"
+
+Bundle 'ervandew/supertab'
+
 
 " Autobuild
 "Bundle 'tpope/vim-dispatch'
