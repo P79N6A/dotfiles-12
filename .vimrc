@@ -108,15 +108,23 @@ Bundle 'myusuf3/numbers.vim'
 " 自动帮你补全括号
 "Bundle 'AutoClose' 
 
+Bundle 'mattn/emmet-vim'
+
 " 代码自动补全
 "Bundle 'Valloric/YouCompleteMe'
- " let g:ycm_server_use_vim_stdout = 1
- " let g:ycm_server_log_level = 'debug'
+  "let g:ycm_server_use_vim_stdout = 1
+  "let g:ycm_server_log_level = 'debug'
+  "nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+  "nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+  "nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
   "Bundle "marijnh/tern_for_vim"
 
 Bundle 'ervandew/supertab'
-
-
+  autocmd FileType *
+    \ if &omnifunc != '' |
+    \   call SuperTabChain(&omnifunc, "<c-p>") |
+    \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
+    \ endif
 " Autobuild
 "Bundle 'tpope/vim-dispatch'
   
@@ -170,4 +178,7 @@ Bundle 'kien/ctrlp.vim'
 
 call vundle#end() " required
 filetype plugin indent on " required
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
