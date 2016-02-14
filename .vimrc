@@ -7,7 +7,10 @@ set autoread " Set to auto read when a file is changed from the outside
 syntax on " 语法高亮
 " 主题
 set background=dark
-colorscheme molokai
+"colorscheme molokai
+"colorscheme solarized
+colorscheme onedark 
+let g:onedark_terminal_italics=1
 set number " 显示行号
 "set relativenumber
 set cursorline " 突出显示当前行
@@ -30,7 +33,7 @@ set autoindent smartindent shiftround "缩进配置
 set expandtab " 用spaces替换tabs
 set smarttab " 自动缩进
 set nowrap " 不要换行
-set scrolloff=7 " 往上下移动到头的时候有7行的缓冲
+set scrolloff=3 " 往上下移动到头的时候的缓冲行数
 "set list listchars=eol:¬,tab:▸\ ,trail:.,
 " Configure backspace so it cts s it should act
 set backspace=eol,start,indent
@@ -79,6 +82,7 @@ filetype off " required
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
+
 " 文件树
 Bundle 'The-NERD-tree'
   " open nerdtree by default
@@ -97,18 +101,22 @@ Bundle 'scrooloose/nerdcommenter'
 
 " indentLine
 Bundle 'Yggdroot/indentLine'
+  let g:indentLine_color_term = 239
 
 " git
 " Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
   let g:gitgutter_realtimeltime = 1
   let g:gitgutter_eager = 1
+
 " relative number and absolute number
 Bundle 'myusuf3/numbers.vim'
 " 自动帮你补全括号
 "Bundle 'AutoClose' 
 
 Bundle 'mattn/emmet-vim'
+
+"Bundle 'majutsushi/tagbar'
 
 " 代码自动补全
 "Bundle 'Valloric/YouCompleteMe'
@@ -125,6 +133,7 @@ Bundle 'ervandew/supertab'
     \   call SuperTabChain(&omnifunc, "<c-p>") |
     \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
     \ endif
+
 " Autobuild
 "Bundle 'tpope/vim-dispatch'
   
@@ -155,13 +164,15 @@ Bundle 'kien/ctrlp.vim'
   "let g:EasyGrepRecursive  = 1 " Recursive searching
   "" 只有在EasyGrepCommand = 1的时候才有用
   "let g:EasyGrepFilesToExclude = 'node_modules,.git/*,static,dist'
+
 "" 语法检查(打开有性能问题)  
 "Bundle 'scrooloose/syntastic'
-"  let g:syntastic_check_on_open = 1  
-"  let g:syntastic_javascript_checkers = ['eslint']
-"  let g:syntastic_warning_symbol='>'
-  " 部分解决syntastic性能问题
-"  Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
+  "let g:syntastic_check_on_open = 1  
+  "let g:syntastic_javascript_checkers = ['eslint']
+  "let g:syntastic_warning_symbol='>'
+  "" 部分解决syntastic性能问题
+  "Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
+
 " React相关
   Bundle 'mxw/vim-jsx'
     "for react jsx, JSX in .js files
