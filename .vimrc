@@ -54,6 +54,9 @@ let mapleader=","
 noremap <silent> <C-Left> :bp<CR>
 noremap <silent> <C-Right> :bn<CR>
 
+command W w
+command Wq wq
+command WQ wq
 " 使用tab启动autocomplete(废弃,已经使用YouCompleteMe)
 "function! Tab_Or_Complete()
 "  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
@@ -114,7 +117,7 @@ Bundle 'myusuf3/numbers.vim'
 " 自动帮你补全括号
 "Bundle 'AutoClose' 
 
-Bundle 'mattn/emmet-vim'
+"Bundle 'mattn/emmet-vim'
 
 "Bundle 'majutsushi/tagbar'
 
@@ -173,6 +176,11 @@ Bundle 'kien/ctrlp.vim'
   "" 部分解决syntastic性能问题
   "Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 
+" markdown 
+"Bundle 'godlygeek/tabular'
+"Bundle 'plasticboy/vim-markdown'
+"let g:vim_markdown_toc_autofit = 1
+"let g:vim_markdown_folding_disabled = 1
 " React相关
   Bundle 'mxw/vim-jsx'
     "for react jsx, JSX in .js files
