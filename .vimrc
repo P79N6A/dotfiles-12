@@ -168,13 +168,13 @@ Bundle 'kien/ctrlp.vim'
   "" 只有在EasyGrepCommand = 1的时候才有用
   "let g:EasyGrepFilesToExclude = 'node_modules,.git/*,static,dist'
 
-"" 语法检查(打开有性能问题)  
-"Bundle 'scrooloose/syntastic'
-  "let g:syntastic_check_on_open = 1  
-  "let g:syntastic_javascript_checkers = ['eslint']
-  "let g:syntastic_warning_symbol='>'
-  "" 部分解决syntastic性能问题
-  "Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
+" 语法检查(打开有性能问题)  
+Bundle 'scrooloose/syntastic'
+  let g:syntastic_check_on_open = 1  
+  let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_warning_symbol='>'
+  " 部分解决syntastic性能问题
+  Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 
 " markdown 
 "Bundle 'godlygeek/tabular'
@@ -194,6 +194,8 @@ Bundle 'kien/ctrlp.vim'
    "Bundle "MarcWeber/vim-addon-mw-utils"
    "Bundle "tomtom/tlib_vim"
    "Bundle "garbas/vim-snipmate"
+
+Bundle 'CodeFalling/fcitx-vim-osx'
 
 call vundle#end() " required
 filetype plugin indent on " required
