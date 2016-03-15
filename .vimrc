@@ -7,9 +7,9 @@ set autoread " Set to auto read when a file is changed from the outside
 syntax on " 语法高亮
 " 主题
 set background=dark
-"colorscheme molokai
+colorscheme molokai
 "colorscheme solarized
-colorscheme onedark 
+"colorscheme onedark 
 let g:onedark_terminal_italics=1
 set number " 显示行号
 "set relativenumber
@@ -172,7 +172,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
   let g:syntastic_check_on_open = 1  
   let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_warning_symbol='>'
+  let g:syntastic_warning_symbol='⚠'
+  let g:syntastic_error_symbol = '✗'
   " 部分解决syntastic性能问题
   Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 
@@ -195,7 +196,12 @@ Bundle 'scrooloose/syntastic'
    "Bundle "tomtom/tlib_vim"
    "Bundle "garbas/vim-snipmate"
 
+" 普通模式下输入法为英文
 Bundle 'CodeFalling/fcitx-vim-osx'
+
+" 平滑滚动
+"Bundle 'yonchu/accelerated-smooth-scroll'
+
 
 call vundle#end() " required
 filetype plugin indent on " required
