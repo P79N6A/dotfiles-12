@@ -7,9 +7,10 @@ set autoread " Set to auto read when a file is changed from the outside
 syntax on " 语法高亮
 " 主题
 set background=dark
-colorscheme molokai
+"colorscheme molokai
 "colorscheme solarized
-"colorscheme onedark 
+"colorscheme desert
+colorscheme onedark 
 let g:onedark_terminal_italics=1
 set number " 显示行号
 "set relativenumber
@@ -21,6 +22,9 @@ set laststatus=2 "显示状态栏
 set wildmenu " Ex模式下自动补全添加单行菜单提
 
 set hlsearch " 高亮搜索
+" from molokai
+hi Search          ctermfg=0   ctermbg=222   cterm=NONE
+hi IncSearch       ctermfg=0 ctermbg=222
 set incsearch " 在输入要搜索的文字时，vim会实时匹配
 set ignorecase " 忽略大小写
 set smartcase " 大小写非必敏感, 与ignorecase并用
@@ -93,6 +97,9 @@ Bundle 'The-NERD-tree'
   "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   let NERDTreeMinimalUI = 1 " 不显示帮助面板
   let g:NERDTreeHijackNetrw=0 
+  let g:NERDTreeShowHidden=1 "show hidden files by default
+  let g:NERDTreeMouseMode=3 "single click both nodes
+  let g:NERDTreeIgnore=['\.git$', '\.DS_Store$','\~$']
   map <C-n> :NERDTreeToggle<CR>
   " active only one nerdtree
   Bundle 'jistr/vim-nerdtree-tabs'
@@ -161,6 +168,7 @@ Bundle 'ag.vim'
   let g:ag_highlight=1
 Bundle 'kien/ctrlp.vim'
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
+  let g:ctrlp_show_hidden=1 "scan dot files
 " 已用ag + the_silver_searcher 替代
 "Bundle 'EasyGrep'
   "let g:EasyGrepCommand = 1
@@ -170,7 +178,8 @@ Bundle 'kien/ctrlp.vim'
 
 " 语法检查(打开有性能问题)  
 Bundle 'scrooloose/syntastic'
-  let g:syntastic_check_on_open = 1  
+  let g:syntastic_check_on_open = 1 
+  let g:syntastic_check_on_wq = 0
   let g:syntastic_javascript_checkers = ['eslint']
   let g:syntastic_warning_symbol='⚠'
   let g:syntastic_error_symbol = '✗'
