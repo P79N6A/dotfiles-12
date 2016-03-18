@@ -17,6 +17,7 @@ set number " 显示行号
 set cursorline " 突出显示当前行
 "set cursorcolumn " 突出显示当前列
 set ruler " 显示ruler
+set colorcolumn=80
 set showcmd " 输入的命令显示出来，看的清楚些
 set laststatus=2 "显示状态栏
 set wildmenu " Ex模式下自动补全添加单行菜单提
@@ -100,7 +101,7 @@ Bundle 'The-NERD-tree'
   let g:NERDTreeShowHidden=1 "show hidden files by default
   let g:NERDTreeMouseMode=3 "single click both nodes
   let g:NERDTreeIgnore=['\.git$', '\.DS_Store$','\~$']
-  map <C-n> :NERDTreeToggle<CR>
+  map <f3> :NERDTreeToggle<CR>
   " active only one nerdtree
   Bundle 'jistr/vim-nerdtree-tabs'
     let g:nerdtree_tabs_open_on_gui_startup = 0
@@ -163,11 +164,11 @@ Bundle 'Lokaltog/vim-easymotion'
 " 全局搜索
 Bundle 'ag.vim'
   "let g:ag_working_path_mode="r"
-  let g:ackprg = 'ag --nogroup --nocolor --column'
+  let g:agprg = 'ag --nogroup --nocolor --column --ignore dist'
   let g:ag_apply_qmappings=0
   let g:ag_highlight=1
 Bundle 'kien/ctrlp.vim'
-  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
+  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
   let g:ctrlp_show_hidden=1 "scan dot files
 " 已用ag + the_silver_searcher 替代
 "Bundle 'EasyGrep'
@@ -210,6 +211,10 @@ Bundle 'CodeFalling/fcitx-vim-osx'
 
 " 平滑滚动
 "Bundle 'yonchu/accelerated-smooth-scroll'
+
+" 多鼠标
+"Bundle 'terryma/vim-multiple-cursors'
+"let g:multi_cursor_next_key='<C-n>'
 
 
 call vundle#end() " required
