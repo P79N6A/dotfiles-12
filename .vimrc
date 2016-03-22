@@ -62,6 +62,12 @@ noremap <silent> <C-Right> :bn<CR>
 command W w
 command Wq wq
 command WQ wq
+nnoremap j jzz
+nnoremap k kzz
+nnoremap n nzz
+nnoremap * *zz
+nnoremap # #zz
+    
 " 使用tab启动autocomplete(废弃,已经使用YouCompleteMe)
 "function! Tab_Or_Complete()
 "  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
@@ -113,7 +119,10 @@ Bundle 'scrooloose/nerdcommenter'
 " indentLine
 Bundle 'Yggdroot/indentLine'
   let g:indentLine_color_term = 239
-
+  " json文件如果开了会不显示"号
+  " fix https://github.com/Yggdroot/indentLine/issues/140
+  Bundle 'elzr/vim-json'
+    let g:vim_json_syntax_conceal = 0
 " git
 " Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
