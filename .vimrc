@@ -124,7 +124,7 @@ Bundle 'Yggdroot/indentLine'
   Bundle 'elzr/vim-json'
     let g:vim_json_syntax_conceal = 0
 " git
-" Bundle 'tpope/vim-fugitive'
+ Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
   let g:gitgutter_realtimeltime = 1
   let g:gitgutter_eager = 1
@@ -231,4 +231,7 @@ filetype plugin indent on " required
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-
+highlight DiffAdd cterm=NONE ctermfg=bg ctermbg=Green gui=NONE guifg=bg guibg=Green
+highlight DiffDelete cterm=NONE ctermfg=bg ctermbg=Red gui=NONE guifg=bg guibg=Red
+highlight DiffChange cterm=NONE ctermfg=bg ctermbg=Yellow gui=NONE guifg=bg guibg=Yellow
+highlight DiffText cterm=NONE ctermfg=bg ctermbg=Magenta gui=NONE guifg=bg guibg=Magenta
