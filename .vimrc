@@ -11,6 +11,17 @@ set background=dark
 "colorscheme solarized
 "colorscheme desert
 colorscheme onedark 
+
+" diff highlight
+highlight DiffAdd cterm=NONE ctermfg=bg ctermbg=Green gui=NONE guifg=bg guibg=Green
+highlight DiffDelete cterm=NONE ctermfg=bg ctermbg=Red gui=NONE guifg=bg guibg=Red
+highlight DiffChange cterm=NONE ctermfg=bg ctermbg=Yellow gui=NONE guifg=bg guibg=Yellow
+highlight DiffText cterm=NONE ctermfg=bg ctermbg=Magenta gui=NONE guifg=bg guibg=Magenta
+" serch highlight
+" from molokai
+hi Search          ctermfg=0   ctermbg=222   cterm=NONE
+hi IncSearch       ctermfg=0 ctermbg=222
+
 let g:onedark_terminal_italics=1
 set number " 显示行号
 "set relativenumber
@@ -23,9 +34,6 @@ set laststatus=2 "显示状态栏
 set wildmenu " Ex模式下自动补全添加单行菜单提
 
 set hlsearch " 高亮搜索
-" from molokai
-hi Search          ctermfg=0   ctermbg=222   cterm=NONE
-hi IncSearch       ctermfg=0 ctermbg=222
 set incsearch " 在输入要搜索的文字时，vim会实时匹配
 set ignorecase " 忽略大小写
 set smartcase " 大小写非必敏感, 与ignorecase并用
@@ -59,15 +67,16 @@ let mapleader=","
 noremap <silent> <C-Left> :bp<CR>
 noremap <silent> <C-Right> :bn<CR>
 
-command W w
-command Wq wq
-command WQ wq
+command! W w
+command! Q q
+command! Wq wq
+command! WQ wq
 nnoremap j jzz
 nnoremap k kzz
 nnoremap n nzz
 nnoremap * *zz
 nnoremap # #zz
-    
+
 " 使用tab启动autocomplete(废弃,已经使用YouCompleteMe)
 "function! Tab_Or_Complete()
 "  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
@@ -88,7 +97,13 @@ set clipboard=unnamed
 
 " nmap p :r !pbpaste<CR><CR>
 
-
+" reload vimrc
+noremap <f5> :source $MYVIMRC<CR> 
+" auto reload .vimrc
+augroup reload_vimrc " {
+autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
 """""""""""""""""""""
 "" Vundle插件相关
 """"""""""""""""""""""
@@ -231,7 +246,4 @@ filetype plugin indent on " required
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-highlight DiffAdd cterm=NONE ctermfg=bg ctermbg=Green gui=NONE guifg=bg guibg=Green
-highlight DiffDelete cterm=NONE ctermfg=bg ctermbg=Red gui=NONE guifg=bg guibg=Red
-highlight DiffChange cterm=NONE ctermfg=bg ctermbg=Yellow gui=NONE guifg=bg guibg=Yellow
-highlight DiffText cterm=NONE ctermfg=bg ctermbg=Magenta gui=NONE guifg=bg guibg=Magenta
+
