@@ -3,26 +3,22 @@ set mouse=a " 使用鼠标
 set nocompatible " 关闭 vi 兼容模式 
 set autoread " Set to auto read when a file is changed from the outside
 
-" 显示相关
 syntax on " 语法高亮
-" 主题
 set background=dark
 "colorscheme molokai
 "colorscheme solarized
 "colorscheme desert
 colorscheme onedark 
-
 " diff highlight
 highlight DiffAdd cterm=NONE ctermfg=bg ctermbg=Green gui=NONE guifg=bg guibg=Green
 highlight DiffDelete cterm=NONE ctermfg=bg ctermbg=Red gui=NONE guifg=bg guibg=Red
 highlight DiffChange cterm=NONE ctermfg=bg ctermbg=Yellow gui=NONE guifg=bg guibg=Yellow
 highlight DiffText cterm=NONE ctermfg=bg ctermbg=Magenta gui=NONE guifg=bg guibg=Magenta
-" serch highlight
-" from molokai
+" serch highlight, from molokai
 hi Search          ctermfg=0   ctermbg=222   cterm=NONE
 hi IncSearch       ctermfg=0 ctermbg=222
-
 let g:onedark_terminal_italics=1
+
 set number " 显示行号
 "set relativenumber
 set cursorline " 突出显示当前行
@@ -60,6 +56,9 @@ set noswapfile
 " 不用保存也可以切换buffer
 set hidden
 
+""""""""""""""""""""""""""""
+" 键位映射相关
+""""""""""""""""""""""""""""
 "修改leader键为逗号
 let mapleader=","
 
@@ -77,33 +76,17 @@ nnoremap n nzz
 nnoremap * *zz
 nnoremap # #zz
 
-" 使用tab启动autocomplete(废弃,已经使用YouCompleteMe)
-"function! Tab_Or_Complete()
-"  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-"    return "\<C-N>"
-"  else
-"    return "\<Tab>"
-"  endif
-"endfunction
-"inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-"noremap <silent> <C-S> :update<CR>
-"vnoremap <silent> <C-S>         <C-C>:update<CR>
-"inoremap <silent> <C-S>         <C-O>:update<CR>
-
 " 使用系统剪切板
 set clipboard=unnamed
-"vmap y :w !pbcopy<CR><CR>
-"nmap yy :.w !pbcopy<CR><CR>
-
-" nmap p :r !pbpaste<CR><CR>
 
 " reload vimrc
 noremap <f5> :source $MYVIMRC<CR> 
 " auto reload .vimrc
-augroup reload_vimrc " {
-autocmd!
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+"augroup reload_vimrc " {
+"autocmd!
+  "autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"augroup END " }
+
 """""""""""""""""""""
 "" Vundle插件相关
 """"""""""""""""""""""
@@ -134,18 +117,18 @@ Bundle 'scrooloose/nerdcommenter'
 " indentLine
 Bundle 'Yggdroot/indentLine'
   let g:indentLine_color_term = 239
-  " json文件如果开了会不显示"号
-  " fix https://github.com/Yggdroot/indentLine/issues/140
+  " json文件如果开了会不显示"号,  fix https://github.com/Yggdroot/indentLine/issues/140
   Bundle 'elzr/vim-json'
     let g:vim_json_syntax_conceal = 0
 " git
- Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-fugitive'
+  Bundle 'airblade/vim-gitgutter'
   let g:gitgutter_realtimeltime = 1
   let g:gitgutter_eager = 1
 
 " relative number and absolute number
 Bundle 'myusuf3/numbers.vim'
+
 " 自动帮你补全括号
 "Bundle 'AutoClose' 
 
@@ -175,8 +158,8 @@ Bundle 'ervandew/supertab'
 " 设置状态栏
 Bundle 'bling/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
-"(不要忘了rtp配置)
-"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+  "(不要忘了rtp配置)
+  "Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " 保证关闭buffer的时候不关闭当前窗口
 Bundle 'qpkorr/vim-bufkill'
@@ -194,12 +177,6 @@ Bundle 'ag.vim'
 Bundle 'kien/ctrlp.vim'
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
   let g:ctrlp_show_hidden=1 "scan dot files
-" 已用ag + the_silver_searcher 替代
-"Bundle 'EasyGrep'
-  "let g:EasyGrepCommand = 1
-  "let g:EasyGrepRecursive  = 1 " Recursive searching
-  "" 只有在EasyGrepCommand = 1的时候才有用
-  "let g:EasyGrepFilesToExclude = 'node_modules,.git/*,static,dist'
 
 " 语法检查(打开有性能问题)  
 Bundle 'scrooloose/syntastic'
@@ -216,6 +193,7 @@ Bundle 'scrooloose/syntastic'
 "Bundle 'plasticboy/vim-markdown'
 "let g:vim_markdown_toc_autofit = 1
 "let g:vim_markdown_folding_disabled = 1
+
 " React相关
   Bundle 'mxw/vim-jsx'
     "for react jsx, JSX in .js files
