@@ -63,15 +63,15 @@ set hidden
 let mapleader=","
 
 "使用左右光标键切换 buffer
-noremap <silent> <C-Left> :bp<CR>
-noremap <silent> <C-Right> :bn<CR>
+noremap <C-h> :bp<CR>
+noremap <C-l> :bn<CR>
 
 command! W w
 command! Q q
 command! Wq wq
 command! WQ wq
-nnoremap j jzz
-nnoremap k kzz
+"nnoremap j jzz
+"nnoremap k kzz
 nnoremap n nzz
 nnoremap * *zz
 nnoremap # #zz
@@ -86,6 +86,9 @@ noremap <f5> :source $MYVIMRC<CR>
 "autocmd!
   "autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "augroup END " }
+
+" 关闭buffer
+map <C-c> :BD<cr>
 
 """""""""""""""""""""
 "" Vundle插件相关
@@ -163,7 +166,6 @@ Bundle 'bling/vim-airline'
 
 " 保证关闭buffer的时候不关闭当前窗口
 Bundle 'qpkorr/vim-bufkill'
-  map <C-c> :BD<cr>
 
 " 移动神器 
 Bundle 'Lokaltog/vim-easymotion'
@@ -179,14 +181,14 @@ Bundle 'kien/ctrlp.vim'
   let g:ctrlp_show_hidden=1 "scan dot files
 
 " 语法检查(打开有性能问题)  
-Bundle 'scrooloose/syntastic'
-  let g:syntastic_check_on_open = 1 
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_warning_symbol='⚠'
-  let g:syntastic_error_symbol = '✗'
-  " 部分解决syntastic性能问题
-  Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
+"Bundle 'scrooloose/syntastic'
+  "let g:syntastic_check_on_open = 1 
+  "let g:syntastic_check_on_wq = 0
+  "let g:syntastic_javascript_checkers = ['eslint']
+  "let g:syntastic_warning_symbol='⚠'
+  "let g:syntastic_error_symbol = '✗'
+  "" 部分解决syntastic性能问题
+  "Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 
 " markdown 
 "Bundle 'godlygeek/tabular'
@@ -218,10 +220,18 @@ Bundle 'CodeFalling/fcitx-vim-osx'
 "Bundle 'terryma/vim-multiple-cursors'
 "let g:multi_cursor_next_key='<C-n>'
 
+"Bundle 'lornix/vim-scrollbar'
 
 call vundle#end() " required
 filetype plugin indent on " required
 
 filetype plugin on
-set omnifunc=syntaxcomplete#Complete
 
+" guiset
+if has('gui_running')
+
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12'
+" nerttree不显示scrollbar
+set guioptions-=L
+
+endif
