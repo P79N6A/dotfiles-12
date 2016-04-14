@@ -210,6 +210,10 @@ Bundle 'kien/ctrlp.vim'
    "Bundle "tomtom/tlib_vim"
    "Bundle "garbas/vim-snipmate"
 
+" snippets
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+
 " 普通模式下输入法为英文
 Bundle 'CodeFalling/fcitx-vim-osx'
 
