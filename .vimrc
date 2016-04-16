@@ -9,6 +9,7 @@ set background=dark
 "colorscheme solarized
 "colorscheme desert
 colorscheme onedark 
+"colorscheme black_angus 
 " diff highlight
 highlight DiffAdd cterm=NONE ctermfg=bg ctermbg=Green gui=NONE guifg=bg guibg=Green
 highlight DiffDelete cterm=NONE ctermfg=bg ctermbg=Red gui=NONE guifg=bg guibg=Red
@@ -90,6 +91,9 @@ noremap <f5> :source $MYVIMRC<CR>
 " 关闭buffer
 map <C-c> :BD<cr>
 
+" 复制粘贴后选中粘贴的内容
+nnoremap gp `[v`]
+
 """""""""""""""""""""
 "" Vundle插件相关
 """"""""""""""""""""""
@@ -132,7 +136,10 @@ Bundle 'tpope/vim-fugitive'
 " relative number and absolute number
 Bundle 'myusuf3/numbers.vim'
 
-" 自动帮你补全括号
+" 自动下载所有主题
+Bundle 'flazz/vim-colorschemes'
+
+" 自动补全括号
 "Bundle 'AutoClose' 
 
 "Bundle 'mattn/emmet-vim'
@@ -147,7 +154,7 @@ Bundle 'myusuf3/numbers.vim'
   "nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
   "nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
   "Bundle "marijnh/tern_for_vim"
-
+" 自动补全
 Bundle 'ervandew/supertab'
   autocmd FileType *
     \ if &omnifunc != '' |
@@ -158,8 +165,11 @@ Bundle 'ervandew/supertab'
 " Autobuild
 "Bundle 'tpope/vim-dispatch'
   
-" 设置状态栏
+" 设置状态栏,顶部buffer栏
 Bundle 'bling/vim-airline'
+  " 使用powerline字体
+  let g:airline_powerline_fonts = 1
+  " enable tabline
   let g:airline#extensions#tabline#enabled = 1
   "(不要忘了rtp配置)
   "Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -168,12 +178,13 @@ Bundle 'bling/vim-airline'
 Bundle 'qpkorr/vim-bufkill'
 
 " 移动神器 
-Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'Lokaltog/vim-easymotion'
 
 " 全局搜索
 Bundle 'ag.vim'
   "let g:ag_working_path_mode="r"
   let g:agprg = 'ag --nogroup --nocolor --column --ignore dist'
+  " 禁止快捷键,如果是splite打开的话会创建一个空白的buffer
   let g:ag_apply_qmappings=0
   let g:ag_highlight=1
 Bundle 'kien/ctrlp.vim'
@@ -213,6 +224,7 @@ Bundle 'kien/ctrlp.vim'
 " snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
 
 " 普通模式下输入法为英文
 Bundle 'CodeFalling/fcitx-vim-osx'
@@ -234,8 +246,8 @@ filetype plugin on
 " guiset
 if has('gui_running')
 
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12'
-" nerttree不显示scrollbar
-set guioptions-=L
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12'
+  " nerttree不显示scrollbar
+  set guioptions-=L
 
 endif
