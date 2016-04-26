@@ -1,0 +1,25 @@
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[user]
+	name = PBDm
+	email = pbdm915@gmail.com
+[push]
+	default = matching
+[core]
+	ignorecase = false
+	editor = /usr/local/bin/vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[https]
+[http]
+# proxy = http://127.0.0.1:8787
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
