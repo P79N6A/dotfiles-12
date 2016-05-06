@@ -192,14 +192,14 @@ Bundle 'kien/ctrlp.vim'
   let g:ctrlp_show_hidden=1 "scan dot files
 
 " 语法检查(打开有性能问题)  
-"Bundle 'scrooloose/syntastic'
-  "let g:syntastic_check_on_open = 1 
-  "let g:syntastic_check_on_wq = 0
-  "let g:syntastic_javascript_checkers = ['eslint']
-  "let g:syntastic_warning_symbol='⚠'
-  "let g:syntastic_error_symbol = '✗'
-  "" 部分解决syntastic性能问题
-  "Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
+Bundle 'scrooloose/syntastic'
+  let g:syntastic_check_on_open = 1 
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_warning_symbol='⚠'
+  let g:syntastic_error_symbol = '✗'
+  " 部分解决syntastic性能问题
+  Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 
 " markdown 
 "Bundle 'godlygeek/tabular'
@@ -214,12 +214,12 @@ Bundle 'kien/ctrlp.vim'
     " Required by vim-jsx
     Bundle 'pangloss/vim-javascript'
   " vim-react-snippets:
-   "Bundle "justinj/vim-react-snippets"
+   Bundle "justinj/vim-react-snippets"
   
   " SnipMate and its dependencies:
-   "Bundle "MarcWeber/vim-addon-mw-utils"
-   "Bundle "tomtom/tlib_vim"
-   "Bundle "garbas/vim-snipmate"
+   Bundle "MarcWeber/vim-addon-mw-utils"
+   Bundle "tomtom/tlib_vim"
+   Bundle "garbas/vim-snipmate"
 
 " snippets
 Bundle 'SirVer/ultisnips'
@@ -227,7 +227,7 @@ Bundle 'honza/vim-snippets'
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 
 " 普通模式下输入法为英文
-Bundle 'CodeFalling/fcitx-vim-osx'
+"Bundle 'CodeFalling/fcitx-vim-osx'
 
 " 平滑滚动
 "Bundle 'yonchu/accelerated-smooth-scroll'
