@@ -114,8 +114,8 @@ Bundle 'The-NERD-tree'
   let g:NERDTreeIgnore=['\.git$', '\.DS_Store$','\~$']
   map <f3> :NERDTreeToggle<CR>
   " active only one nerdtree
-  Bundle 'jistr/vim-nerdtree-tabs'
-    let g:nerdtree_tabs_open_on_gui_startup = 0
+  "Bundle 'jistr/vim-nerdtree-tabs'
+    "let g:nerdtree_tabs_open_on_gui_startup = 0
   " close vim if the only window left open is a NERDTree
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   Bundle 'Xuyuanp/nerdtree-git-plugin'
@@ -137,8 +137,11 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'myusuf3/numbers.vim'
 
 " 自动下载所有主题
-Bundle 'flazz/vim-colorschemes'
+"Bundle 'flazz/vim-colorschemes'
 
+" 彩虹括号
+Bundle 'luochen1990/rainbow'
+  let g:rainbow_active = 1
 " 自动补全括号
 "Bundle 'AutoClose' 
 
@@ -185,7 +188,7 @@ Bundle 'ag.vim'
   "let g:ag_working_path_mode="r"
   let g:agprg = 'ag --nogroup --nocolor --column --ignore dist'
   " 禁止快捷键,如果是splite打开的话会创建一个空白的buffer
-  let g:ag_apply_qmappings=0
+  let g:ag_apply_qmappings=1
   let g:ag_highlight=1
 Bundle 'kien/ctrlp.vim'
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
