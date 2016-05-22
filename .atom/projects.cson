@@ -1,0 +1,10 @@
+pajkplugin:
+  title: "Pajk Plugin"
+  paths: [
+    "/Users/bopeng/c/pa/pajk-plugin"
+  ]
+pbdm:
+  title: "Pbdm"
+  paths: [
+    "/Users/bopeng/c/pbdm"
+  ]

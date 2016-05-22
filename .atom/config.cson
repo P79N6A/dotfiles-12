@@ -1,0 +1,120 @@
+"*":
+  "atom-beautify":
+    _analyticsUserId: "2fc3cea8-43fb-4104-952c-ff33daa6ee12"
+    general:
+      _analyticsUserId: "95badf49-7100-44ec-a51e-d9694ee2dc41"
+  "atom-material-ui":
+    compactTreeView: true
+    depth: true
+    panelContrast: true
+    rippleAccentColor: true
+    slimScrollbar: true
+    tabSize: "Small"
+  build:
+    panelOrientation: "Right"
+    scrollOnError: true
+    statusBar: "Disable"
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "Sublime-Style-Column-Selection"
+      "expose"
+      "git-history"
+      "imdone-atom"
+      "atom-jade"
+      "symbols-tree-view"
+      "minimap-autohide"
+      "jumpy"
+      "auto-detect-indentation"
+      "build-gulp"
+      "minimap-highlight-selected"
+      "atom-beautify"
+      "term2"
+      "run-command2"
+      "terminal-status"
+      "build"
+      "terminal-plus"
+      "elastic-tabstops"
+      "markdown-toc"
+      "atom-terminal-panel"
+      "nuclide"
+      "activate-power-mode"
+      "flex-tool-bar"
+      "tool-bar"
+    ]
+    packagesWithKeymapsDisabled: []
+    projectHome: "/Users/bopeng/lib"
+  docblockr: {}
+  editor:
+    fontSize: 12
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrap: true
+  "exception-reporting":
+    userId: "df2ea918-75b6-86b9-99e0-835076b5a3e6"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "git-history":
+    showDiff: false
+  "highlight-selected": {}
+  jumpy:
+    highContrast: true
+  linter:
+    errorPanelHeight: 178
+    showErrorPanel: false
+  "linter-eslint":
+    globalNodePath: "/usr/local"
+    showRuleIdInMessage: false
+    useGlobalEslint: true
+  "linter-jsxhint":
+    harmony: true
+  "merge-conflicts": {}
+  minimap:
+    absoluteMode: true
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+    textOpacity: 0.4
+  nuclide:
+    "nuclide-working-sets": {}
+  "one-dark-ui":
+    layoutMode: "Compact"
+  pigments: {}
+  react: {}
+  "run-command2": {}
+  "symbols-tree-view":
+    autoToggle: true
+  term2:
+    cursorBlink: false
+  term3:
+    cursorBlink: false
+    fontFamily: "DejaVu Sans Mono for Powerline"
+  "terminal-plus":
+    style:
+      fontFamily: "DejaVu Sans Mono for Powerline"
+    toggles:
+      cursorBlink: false
+  "terminal-status":
+    WindowHeight: 100
+  "tool-bar":
+    position: "Left"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false
+".ini.source":
+  editor:
+    tabLength: 4

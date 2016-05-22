@@ -1,0 +1,7 @@
+'body':
+  'alt-cmd-h': 'window:focus-pane-on-left'
+  'alt-cmd-l': 'window:focus-pane-on-right'
+  'alt-cmd-k': 'window:focus-pane-above'
+  'alt-cmd-j': 'window:focus-pane-below'
+  'ctrl-h': 'pane:show-previous-item'
+  'ctrl-l': 'pane:show-next-item'
