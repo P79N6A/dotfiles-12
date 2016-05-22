@@ -195,14 +195,14 @@ Bundle 'kien/ctrlp.vim'
   let g:ctrlp_show_hidden=1 "scan dot files
 
 " 语法检查(打开有性能问题)  
-Bundle 'scrooloose/syntastic'
-  let g:syntastic_check_on_open = 1 
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_warning_symbol='⚠'
-  let g:syntastic_error_symbol = '✗'
-  " 部分解决syntastic性能问题
-  Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
+"Bundle 'scrooloose/syntastic'
+  "let g:syntastic_check_on_open = 1 
+  "let g:syntastic_check_on_wq = 0
+  "let g:syntastic_javascript_checkers = ['eslint']
+  "let g:syntastic_warning_symbol='⚠'
+  "let g:syntastic_error_symbol = '✗'
+  "" 部分解决syntastic性能问题
+  "Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 
 " markdown 
 "Bundle 'godlygeek/tabular'
