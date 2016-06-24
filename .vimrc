@@ -73,6 +73,7 @@ command! Wq wq
 command! WQ wq
 "nnoremap j jzz
 "nnoremap k kzz
+" 查找时自动滚屏
 nnoremap n nzz
 nnoremap * *zz
 nnoremap # #zz

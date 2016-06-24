@@ -5,3 +5,10 @@
   'alt-cmd-j': 'window:focus-pane-below'
   'ctrl-h': 'pane:show-previous-item'
   'ctrl-l': 'pane:show-next-item'
+'atom-text-editor':
+  'ctrl-alt-j': 'term3:open-split-down'
+  'ctrl-alt-k': 'term3:open-split-up'
+  'ctrl-alt-h': 'term3:open-split-left'
+  'ctrl-alt-l': 'term3:open-split-right'
+'.tree-view':
+  'i': 'tree-view:toggle-vcs-ignored-files'

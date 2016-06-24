@@ -8,3 +8,13 @@ pbdm:
   paths: [
     "/Users/bopeng/c/pbdm"
   ]
+"playground-react":
+  title: "playground-react"
+  paths: [
+    "/Users/bopeng/c/playground/react"
+  ]
+paotuan:
+  title: "Paotuan"
+  paths: [
+    "/Users/bopeng/c/pa/activity-h5/paotuan"
+  ]

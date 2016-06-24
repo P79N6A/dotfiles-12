@@ -50,11 +50,28 @@
       "atom-terminal-panel"
       "nuclide"
       "activate-power-mode"
-      "flex-tool-bar"
+      "file-icons"
+      "metrics"
+      "spell-check"
+      "minimap"
+      "pigments"
       "tool-bar"
+      "flex-tool-bar"
+      "background-tips"
+      "bookmarks"
     ]
-    packagesWithKeymapsDisabled: []
-    projectHome: "/Users/bopeng/lib"
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "node_modules"
+      "dist"
+    ]
+    packagesWithKeymapsDisabled: [
+      "tree-view"
+    ]
+    projectHome: "/Users/bopeng/c"
   docblockr: {}
   editor:
     fontSize: 12
@@ -66,14 +83,19 @@
     userId: "df2ea918-75b6-86b9-99e0-835076b5a3e6"
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
+  "find-and-replace":
+    closeFindPanelAfterSearch: true
+  "fuzzy-finder": {}
   "git-history":
     showDiff: false
   "highlight-selected": {}
   jumpy:
     highContrast: true
   linter:
-    errorPanelHeight: 178
+    errorPanelHeight: 22
     showErrorPanel: false
+    showErrorTabLine: true
+    showErrorTabProject: false
   "linter-eslint":
     globalNodePath: "/usr/local"
     showRuleIdInMessage: false
@@ -92,10 +114,21 @@
   "one-dark-ui":
     layoutMode: "Compact"
   pigments: {}
+  "project-manager": {}
   react: {}
+  "relative-numbers":
+    showAbsoluteNumbers: true
   "run-command2": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
   "symbols-tree-view":
     autoToggle: true
+  tabs:
+    enableVcsColoring: true
   term2:
     cursorBlink: false
   term3:
@@ -110,9 +143,10 @@
     WindowHeight: 100
   "tool-bar":
     position: "Left"
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode": {}
+  wakatime:
+    apikey: "Saved in your ~/.wakatime.cfg file"
   welcome:
     showOnStartup: false
 ".ini.source":
