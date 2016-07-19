@@ -6,7 +6,10 @@ export ZSH=/Users/bopeng/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="lambda-mod"
+ZSH_THEME="bureau"
+ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,7 +53,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git osx vim-mode z git-extras)
 
 # User configuration
 
@@ -84,9 +87,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias cnpm="npm --registry=http://r.cnpmjs.org \
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=http://cnpmjs.org/dist \
+  --disturl=https://npm.taobao.org/dist \
   --userconfig=$HOME/.cnpmrc"
 
 alias server='python -m SimpleHTTPServer'

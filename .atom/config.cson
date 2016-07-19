@@ -50,7 +50,6 @@
       "atom-terminal-panel"
       "nuclide"
       "activate-power-mode"
-      "file-icons"
       "metrics"
       "spell-check"
       "minimap"
@@ -59,6 +58,11 @@
       "flex-tool-bar"
       "background-tips"
       "bookmarks"
+      "go-to-line"
+      "git-time-machine"
+      "dev-live-reload"
+      "link"
+      "project-manager"
     ]
     ignoredNames: [
       ".git"
@@ -81,6 +85,8 @@
     softWrap: true
   "exception-reporting":
     userId: "df2ea918-75b6-86b9-99e0-835076b5a3e6"
+  "file-icons":
+    tabPaneIcon: false
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
   "find-and-replace":
@@ -113,6 +119,7 @@
     "nuclide-working-sets": {}
   "one-dark-ui":
     layoutMode: "Compact"
+    tabSizing: "Even"
   pigments: {}
   "project-manager": {}
   react: {}
