@@ -62,7 +62,13 @@
       "git-time-machine"
       "dev-live-reload"
       "link"
-      "project-manager"
+      "merge-conflicts"
+      "vim-mode-zz"
+      "wakatime"
+      "ex-mode"
+      "term3"
+      "language-diff"
+      "markdown-scroll-sync"
     ]
     ignoredNames: [
       ".git"
@@ -72,6 +78,7 @@
       "node_modules"
       "dist"
     ]
+    openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "tree-view"
     ]
@@ -92,6 +99,10 @@
   "find-and-replace":
     closeFindPanelAfterSearch: true
   "fuzzy-finder": {}
+  "genesis-ui":
+    distractionFree: {}
+    treeView:
+      toggleHovers: false
   "git-history":
     showDiff: false
   "highlight-selected": {}
@@ -99,7 +110,6 @@
     highContrast: true
   linter:
     errorPanelHeight: 22
-    showErrorPanel: false
     showErrorTabLine: true
     showErrorTabProject: false
   "linter-eslint":
@@ -140,7 +150,7 @@
     cursorBlink: false
   term3:
     cursorBlink: false
-    fontFamily: "DejaVu Sans Mono for Powerline"
+    fontFamily: "Hack"
   "terminal-plus":
     style:
       fontFamily: "DejaVu Sans Mono for Powerline"
@@ -150,7 +160,8 @@
     WindowHeight: 100
   "tool-bar":
     position: "Left"
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   "vim-mode": {}
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"

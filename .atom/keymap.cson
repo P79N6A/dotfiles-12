@@ -12,3 +12,5 @@
   'ctrl-alt-l': 'term3:open-split-right'
 '.tree-view':
   'i': 'tree-view:toggle-vcs-ignored-files'
+'atom-workspace, atom-workspace atom-text-editor':
+  'cmd-m': 'markdown-preview:toggle'

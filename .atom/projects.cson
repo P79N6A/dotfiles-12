@@ -18,3 +18,9 @@ paotuan:
   paths: [
     "/Users/bopeng/c/pa/activity-h5/paotuan"
   ]
+posts:
+  title: "Posts"
+  paths: [
+    "/Users/bopeng/c/pbdm/posts"
+    "/Users/bopeng/c/pbdm"
+  ]
