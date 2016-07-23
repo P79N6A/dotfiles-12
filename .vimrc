@@ -249,9 +249,12 @@ filetype plugin on
 
 " guiset
 if has('gui_running')
-
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12'
   " nerttree不显示scrollbar
   set guioptions-=L
+endif
 
+" tmux
+if exists('$TMUX')
+  set term=screen-256color
 endif
