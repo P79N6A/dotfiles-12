@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/bopeng/.oh-my-zsh
-
+# for tmuxinator
+export EDITOR='vim'
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -95,4 +96,10 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 alias server='python -m SimpleHTTPServer'
 alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
 alias vi='vim --noplugin'
+export PATH="/usr/local/sbin:$PATH"
+
+# for mux of tmux
+source ~/.bin/tmuxinator.zsh
+export DISABLE_AUTO_TITLE=true
+alias mux='tmuxinator'
 export PATH="/usr/local/sbin:$PATH"
