@@ -32,7 +32,6 @@ windows:
       layout: main-vertical
       panes:
         - 
-        - 
   - health-circle:
       root: ~/c/pa/health-circle
       layout: main-vertical
@@ -43,11 +42,12 @@ windows:
       root: ~/c/pa/pajk-plugin
       layout: main-vertical
       panes:
-        - 
+        -
         - npm run start 
   - jg:
       root: ~/c/jg
       layout: main-vertical
       panes:
         - 
+        - npm run wstart
         - npm run debug 

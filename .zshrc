@@ -8,8 +8,8 @@ export EDITOR='vim'
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
-ZSH_THEME="lambda-mod"
-ZSH_THEME="bureau"
+#ZSH_THEME="lambda-mod"
+#ZSH_THEME="bureau"
 ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -54,7 +54,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode tmux osx z)
+plugins=(git vi-mode tmux osx z docker)
 
 # User configuration
 
