@@ -14,3 +14,5 @@
   'i': 'tree-view:toggle-vcs-ignored-files'
 'atom-workspace, atom-workspace atom-text-editor':
   'cmd-m': 'markdown-preview:toggle'
+'.platform-darwin':
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'

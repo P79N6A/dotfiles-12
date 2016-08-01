@@ -96,8 +96,7 @@
     tabPaneIcon: false
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
-  "find-and-replace":
-    closeFindPanelAfterSearch: true
+  "find-and-replace": {}
   "fuzzy-finder": {}
   "genesis-ui":
     distractionFree: {}
