@@ -255,6 +255,6 @@ if has('gui_running')
 endif
 
 " tmux
-if exists('$TMUX')
+"if exists('$TMUX')
   set term=screen-256color
-endif
+"endif
