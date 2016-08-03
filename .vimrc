@@ -118,7 +118,7 @@ Bundle 'The-NERD-tree'
   "Bundle 'jistr/vim-nerdtree-tabs'
     "let g:nerdtree_tabs_open_on_gui_startup = 0
   " close vim if the only window left open is a NERDTree
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'scrooloose/nerdcommenter' 
 
