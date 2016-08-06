@@ -32,6 +32,7 @@ windows:
       layout: main-vertical
       panes:
         - 
+        - 
   - health-circle:
       root: ~/c/pa/health-circle
       layout: main-vertical
@@ -44,8 +45,8 @@ windows:
       panes:
         -
         - npm run start 
-  - jg:
-      root: ~/c/jg
+  - pbdm:
+      root: ~/c/pbdm
       layout: main-vertical
       panes:
         - 
