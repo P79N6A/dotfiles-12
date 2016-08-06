@@ -69,6 +69,7 @@
       "term3"
       "language-diff"
       "markdown-scroll-sync"
+      "node-debugger"
     ]
     ignoredNames: [
       ".git"
