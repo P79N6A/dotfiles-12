@@ -31,24 +31,23 @@ windows:
   - editor:
       layout: main-vertical
       panes:
-        - 
-        - 
+        -
   - health-circle:
       root: ~/c/pa/health-circle
       layout: main-vertical
       panes:
-        - 
-        - npm run start 
+        -
+        - npm run start
   - pajk-plugin:
       root: ~/c/pa/pajk-plugin
       layout: main-vertical
       panes:
         -
-        - npm run start 
+        - npm run start
   - pbdm:
       root: ~/c/pbdm
       layout: main-vertical
       panes:
-        - 
+        -
         - npm run wstart
-        - npm run debug 
+        - npm run debug

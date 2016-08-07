@@ -1,7 +1,7 @@
 set encoding=utf8 " 默认编码
 set mouse=a " 使用鼠标
 set nocompatible " 关闭 vi 兼容模式
-set autoread " Set to auto read when a file is changed from the outside
+"set autoread " Set to auto read when a file is changed from the outside
 
 syntax on " 语法高亮
 set background=dark
@@ -105,6 +105,9 @@ set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and i
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
 
+" chinese document
+Plugin 'asins/vimcdoc'
+
 " 文件树
 Bundle 'The-NERD-tree'
   " open nerdtree by default
@@ -154,6 +157,9 @@ Bundle 'myusuf3/numbers.vim'
 
 "Bundle 'majutsushi/tagbar'
 
+" 后悔药
+Bundle 'mbbill/undotree'
+ nnoremap <leader>u :UndotreeToggle<cr>:UndotreeFocus<cr>
 " 代码自动补全
 "Bundle 'Valloric/YouCompleteMe'
   "let g:ycm_server_use_vim_stdout = 1
@@ -235,12 +241,14 @@ Bundle 'scrooloose/syntastic'
   " 部分解决syntastic性能问题(有 eslint_d就不用这个了)
   "Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
 
+"Bundle 'heavenshell/vim-jsdoc'
+"nmap <C-l> <Plug>(jsdoc)
 " markdown
-Bundle 'plasticboy/vim-markdown'
-  " required by vim-markdown
-  Bundle 'godlygeek/tabular'
-  let g:vim_markdown_toc_autofit = 1
-  let g:vim_markdown_folding_disabled = 1
+"Bundle 'plasticboy/vim-markdown'
+  "" required by vim-markdown
+  "Bundle 'godlygeek/tabular'
+  "let g:vim_markdown_toc_autofit = 1
+  "let g:vim_markdown_folding_disabled = 1
 
 " React相关
 Bundle 'mxw/vim-jsx'
