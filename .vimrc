@@ -194,6 +194,7 @@ Bundle 'bling/vim-airline'
   let g:airline#extensions#syntastic#enabled = 0
 
   let g:airline#extensions#tabline#buffer_idx_mode = 1
+  " TODO use for
   nmap <leader>1 <Plug>AirlineSelectTab1
   nmap <leader>2 <Plug>AirlineSelectTab2
   nmap <leader>3 <Plug>AirlineSelectTab3
@@ -243,12 +244,15 @@ Bundle 'scrooloose/syntastic'
 
 "Bundle 'heavenshell/vim-jsdoc'
 "nmap <C-l> <Plug>(jsdoc)
+
 " markdown
-"Bundle 'plasticboy/vim-markdown'
-  "" required by vim-markdown
-  "Bundle 'godlygeek/tabular'
-  "let g:vim_markdown_toc_autofit = 1
-  "let g:vim_markdown_folding_disabled = 1
+Bundle 'plasticboy/vim-markdown'
+  " required by vim-markdown
+  Bundle 'godlygeek/tabular'
+  let g:vim_markdown_toc_autofit = 1
+  let g:vim_markdown_folding_disabled = 1
+  let g:vim_markdown_conceal = 0
+  let g:vim_markdown_fenced_languages = ['js=javascript', 'php=php', 'css=css', 'html=html']
 
 " React相关
 Bundle 'mxw/vim-jsx'
@@ -257,15 +261,15 @@ Bundle 'mxw/vim-jsx'
   " Required by vim-jsx
   Bundle 'pangloss/vim-javascript'
 
-" vim-react-snippets:
+"vim-react-snippets(replaced by mlaursen/vim-react-snippets)
   "Bundle 'justinj/vim-react-snippets'
 
-" SnipMate and its dependencies:
-  "Bundle 'MarcWeber/vim-addon-mw-utils'
-  "Bundle 'tomtom/tlib_vim'
-  "Bundle 'garbas/vim-snipmate'
+  "SnipMate and its dependencies:
+    "Bundle 'MarcWeber/vim-addon-mw-utils'
+    "Bundle 'tomtom/tlib_vim'
+    "Bundle 'garbas/vim-snipmate'
 
-  "Bundle 'bentayloruk/vim-react-es6-snippets'
+    "Bundle 'bentayloruk/vim-react-es6-snippets'
 
 " snippets
 Bundle 'SirVer/ultisnips'
@@ -274,7 +278,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-f>"
 Bundle 'mlaursen/vim-react-snippets'
 Bundle 'honza/vim-snippets'
 
-" 普通模式下输入法为英文
+" 普通模式下输入法为英文(have bugs)
 "Bundle 'CodeFalling/fcitx-vim-osx'
 
 " 平滑滚动
