@@ -60,8 +60,9 @@ set noswapfile
 set hidden
 
 """"""""""""""""""""""""""""
-" 键位映射相关
+" key mapping
 """"""""""""""""""""""""""""
+
 "修改leader键为逗号
 let mapleader=","
 
@@ -97,19 +98,24 @@ map <C-c> :BD<cr>
 " 复制粘贴后选中粘贴的内容
 nnoremap gp `[v`]
 
-"""""""""""""""""""""
-"" Vundle插件相关
-""""""""""""""""""""""
-filetype off " required
-set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
+
+""""""""""""""""""""""""""""
+" Plugin Manager(vim-plug) "
+""""""""""""""""""""""""""""
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
 
 " chinese document
-Plugin 'asins/vimcdoc'
+Plug 'asins/vimcdoc'
 
 " 文件树
-Bundle 'The-NERD-tree'
+Plug 'The-NERD-tree', { 'on':  'NERDTreeToggle' }
   " open nerdtree by default
   "autocmd StdinReadPre * let s:std_in=1
   "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -120,56 +126,59 @@ Bundle 'The-NERD-tree'
   let g:NERDTreeIgnore=['\.git$', '\.DS_Store$','\~$']
   map <C-n> :NERDTreeToggle<CR>
   " active only one nerdtree
-  "Bundle 'jistr/vim-nerdtree-tabs'
+  "Plug 'jistr/vim-nerdtree-tabs'
     "let g:nerdtree_tabs_open_on_gui_startup = 0
   " close vim if the only window left open is a NERDTree
   "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  Bundle 'Xuyuanp/nerdtree-git-plugin'
-Bundle 'scrooloose/nerdcommenter'
+  Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
+
+" commenter
+Plug 'scrooloose/nerdcommenter'
 
 " indentLine
-Bundle 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
   let g:indentLine_color_term = 239
   " json文件如果开了会不显示"号,  fix https://github.com/Yggdroot/indentLine/issues/140
-  Bundle 'elzr/vim-json'
+  Plug 'elzr/vim-json'
     let g:vim_json_syntax_conceal = 0
 
 " git
-Bundle 'tpope/vim-fugitive'
-  Bundle 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
   " may cause lag when set to 1
   let g:gitgutter_realtimeltime = 0
   let g:gitgutter_eager = 0
 
 " relative number and absolute number
-Bundle 'myusuf3/numbers.vim'
+Plug 'myusuf3/numbers.vim'
 
 " 自动下载所有主题
-"Bundle 'flazz/vim-colorschemes'
+"Plug 'flazz/vim-colorschemes'
 
 " 彩虹括号
-"Bundle 'luochen1990/rainbow'
+"Plug 'luochen1990/rainbow'
   "let g:rainbow_active = 1
 " 自动补全括号
-"Bundle 'AutoClose'
+"Plug 'AutoClose'
 
-"Bundle 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 
-"Bundle 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 
 " 后悔药
-Bundle 'mbbill/undotree'
+Plug 'mbbill/undotree'
  nnoremap <leader>u :UndotreeToggle<cr>:UndotreeFocus<cr>
+
 " 代码自动补全
-"Bundle 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
   "let g:ycm_server_use_vim_stdout = 1
   "let g:ycm_server_log_level = 'debug'
   "nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
   "nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
   "nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-  "Bundle 'marijnh/tern_for_vim'
+  "Plug 'marijnh/tern_for_vim'
 " 自动补全
-Bundle 'ervandew/supertab'
+Plug 'ervandew/supertab'
   autocmd FileType *
     \ if &omnifunc != '' |
     \   call SuperTabChain(&omnifunc, "<c-p>") |
@@ -177,10 +186,10 @@ Bundle 'ervandew/supertab'
     \ endif
 
 " Autobuild
-"Bundle 'tpope/vim-dispatch'
+"Plug 'tpope/vim-dispatch'
 
 " 设置状态栏,顶部buffer栏
-Bundle 'bling/vim-airline'
+Plug 'bling/vim-airline'
   " 使用powerline字体
   let g:airline_powerline_fonts = 1
   " enable tabline
@@ -207,31 +216,30 @@ Bundle 'bling/vim-airline'
   nmap <C-h> <Plug>AirlineSelectPrevTab
   nmap <C-l> <Plug>AirlineSelectNextTab
 
-Bundle 'ntpeters/vim-better-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
   " auto remove whitespace when save
   autocmd BufWritePre * StripWhitespace
 
 " 保证关闭buffer的时候不关闭当前窗口
-Bundle 'qpkorr/vim-bufkill'
+Plug 'qpkorr/vim-bufkill'
 
 " 移动神器
-"Bundle 'Lokaltog/vim-easymotion'
-
+"Plug 'Lokaltog/vim-easymotion'
 
 " 全局搜索
-"Bundle 'Shougo/unite.vim'
-Bundle 'ag.vim'
+"Plug 'Shougo/unite.vim'
+Plug 'ag.vim'
   "let g:ag_working_path_mode="r"
   let g:agprg = 'ag --nogroup --nocolor --column --ignore dist'
   " 禁止快捷键,如果是splite打开的话会创建一个空白的buffer
   let g:ag_apply_qmappings=1
   let g:ag_highlight=1
-Bundle 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
   let g:ctrlp_show_hidden=1 "scan dot files
 
 " 语法检查(打开有性能问题)
-Bundle 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
   let g:syntastic_check_on_open = 1
   let g:syntastic_check_on_wq = 0
   let g:syntastic_javascript_checkers = ['eslint']
@@ -240,60 +248,58 @@ Bundle 'scrooloose/syntastic'
   let g:syntastic_warning_symbol='⚠'
   let g:syntastic_error_symbol = '✗'
   " 部分解决syntastic性能问题(有 eslint_d就不用这个了)
-  "Bundle 'ruanyl/vim-eslint', {'do': 'npm install'}
+  "Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
 
-"Bundle 'heavenshell/vim-jsdoc'
+"Plug 'heavenshell/vim-jsdoc'
 "nmap <C-l> <Plug>(jsdoc)
 
+" 万能语法高亮,暂时关闭`
+"Plug 'sheerun/vim-polyglot', { 'do': './build'}
 " markdown
-Bundle 'plasticboy/vim-markdown'
-  " required by vim-markdown
-  Bundle 'godlygeek/tabular'
+" tabular is required by vim-markdown
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
   let g:vim_markdown_toc_autofit = 1
   let g:vim_markdown_folding_disabled = 1
   let g:vim_markdown_conceal = 0
   let g:vim_markdown_fenced_languages = ['js=javascript', 'php=php', 'css=css', 'html=html']
 
 " React相关
-Bundle 'mxw/vim-jsx'
+" Required by vim-jsx
+Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
   "for react jsx, JSX in .js files
   let g:jsx_ext_required = 0
-  " Required by vim-jsx
-  Bundle 'pangloss/vim-javascript'
 
 "vim-react-snippets(replaced by mlaursen/vim-react-snippets)
-  "Bundle 'justinj/vim-react-snippets'
+  "Plug 'justinj/vim-react-snippets'
 
   "SnipMate and its dependencies:
-    "Bundle 'MarcWeber/vim-addon-mw-utils'
-    "Bundle 'tomtom/tlib_vim'
-    "Bundle 'garbas/vim-snipmate'
+    "Plug 'MarcWeber/vim-addon-mw-utils'
+    "Plug 'tomtom/tlib_vim'
+    "Plug 'garbas/vim-snipmate'
 
-    "Bundle 'bentayloruk/vim-react-es6-snippets'
+    "Plug 'bentayloruk/vim-react-es6-snippets'
 
 " snippets
-Bundle 'SirVer/ultisnips'
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
+Plug 'SirVer/ultisnips'
+  let g:UltiSnipsJumpForwardTrigger="<c-f>"
 
-Bundle 'mlaursen/vim-react-snippets'
-Bundle 'honza/vim-snippets'
+Plug 'mlaursen/vim-react-snippets'
+Plug 'honza/vim-snippets'
 
 " 普通模式下输入法为英文(have bugs)
-"Bundle 'CodeFalling/fcitx-vim-osx'
+"Plug 'CodeFalling/fcitx-vim-osx'
 
 " 平滑滚动
-"Bundle 'yonchu/accelerated-smooth-scroll'
+"Plug 'yonchu/accelerated-smooth-scroll'
 
 " 多鼠标
-"Bundle 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 "let g:multi_cursor_next_key='<C-n>'
 
-"Bundle 'lornix/vim-scrollbar'
+"Plug 'lornix/vim-scrollbar'
 
-call vundle#end() " required
-filetype plugin indent on " required
+call plug#end()
 
-filetype plugin on
 
 " guiset
 if has('gui_running')
