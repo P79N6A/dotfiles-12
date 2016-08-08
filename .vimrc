@@ -4,9 +4,13 @@ set encoding=utf8 " 默认编码
 set listchars=trail:·
 set list
 
-set mouse=a " 使用鼠标
+set mouse=a "使用鼠标
 set nocompatible " 关闭 vi 兼容模式
 "set autoread " Set to auto read when a file is changed from the outside
+
+"在执行宏命令时，不进行显示重绘；在宏命令执行完成后，一次性重绘，以便提高性能。
+set lazyredraw
+set ttyfast
 
 syntax on " 语法高亮
 set background=dark
