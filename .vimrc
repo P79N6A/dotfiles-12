@@ -166,8 +166,8 @@ Plug 'myusuf3/numbers.vim'
 "Plug 'majutsushi/tagbar'
 
 " 后悔药
-Plug 'mbbill/undotree'
- nnoremap <leader>u :UndotreeToggle<cr>:UndotreeFocus<cr>
+"Plug 'mbbill/undotree'
+ "nnoremap <leader>u :UndotreeToggle<cr>:UndotreeFocus<cr>
 
 " 代码自动补全
 "Plug 'Valloric/YouCompleteMe'
@@ -177,13 +177,14 @@ Plug 'mbbill/undotree'
   "nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
   "nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
   "Plug 'marijnh/tern_for_vim'
+
 " 自动补全
-Plug 'ervandew/supertab'
-  autocmd FileType *
-    \ if &omnifunc != '' |
-    \   call SuperTabChain(&omnifunc, "<c-p>") |
-    \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
-    \ endif
+"Plug 'ervandew/supertab'
+  "autocmd FileType *
+    "\ if &omnifunc != '' |
+    "\   call SuperTabChain(&omnifunc, '<c-p>') |
+    "\   call SuperTabSetDefaultCompletionType('<c-x><c-u>') |
+    "\ endif
 
 " Autobuild
 "Plug 'tpope/vim-dispatch'
@@ -192,6 +193,8 @@ Plug 'ervandew/supertab'
 Plug 'bling/vim-airline'
   " 使用powerline字体
   let g:airline_powerline_fonts = 1
+  " 防止切换到 normal 模式时候的延迟
+  set ttimeoutlen=0
   " enable tabline
   let g:airline#extensions#tabline#enabled = 1
   " white space checks to enable
@@ -247,8 +250,6 @@ Plug 'scrooloose/syntastic'
   let g:syntastic_javascript_eslint_exec = 'eslint_d'
   let g:syntastic_warning_symbol='⚠'
   let g:syntastic_error_symbol = '✗'
-  " 部分解决syntastic性能问题(有 eslint_d就不用这个了)
-  "Plug 'ruanyl/vim-eslint', {'do': 'npm install'}
 
 "Plug 'heavenshell/vim-jsdoc'
 "nmap <C-l> <Plug>(jsdoc)
