@@ -232,12 +232,6 @@ Plug 'bling/vim-airline'
   nmap <C-h> <Plug>AirlineSelectPrevTab
   nmap <C-l> <Plug>AirlineSelectNextTab
 
-"Plug 'ntpeters/vim-better-whitespace'
-  "" auto remove whitespace when save
-  "autocmd BufWritePre * StripWhitespace
-  "autocmd BufWritePre * CurrentLineWhitespaceOff soft
-
-"Plug 'DeleteTrailingWhitespace'
 
 " 保证关闭buffer的时候不关闭当前窗口
 Plug 'qpkorr/vim-bufkill'
