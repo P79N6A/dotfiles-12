@@ -1,4 +1,9 @@
 set encoding=utf8 " 默认编码
+
+" highlight whitespace
+set listchars=trail:·
+set list
+
 set mouse=a " 使用鼠标
 set nocompatible " 关闭 vi 兼容模式
 "set autoread " Set to auto read when a file is changed from the outside
@@ -98,6 +103,14 @@ map <C-c> :BD<cr>
 " 复制粘贴后选中粘贴的内容
 nnoremap gp `[v`]
 
+" delete whitespace onsave
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 """"""""""""""""""""""""""""
 " Plugin Manager(vim-plug) "
@@ -219,9 +232,12 @@ Plug 'bling/vim-airline'
   nmap <C-h> <Plug>AirlineSelectPrevTab
   nmap <C-l> <Plug>AirlineSelectNextTab
 
-Plug 'ntpeters/vim-better-whitespace'
-  " auto remove whitespace when save
-  autocmd BufWritePre * StripWhitespace
+"Plug 'ntpeters/vim-better-whitespace'
+  "" auto remove whitespace when save
+  "autocmd BufWritePre * StripWhitespace
+  "autocmd BufWritePre * CurrentLineWhitespaceOff soft
+
+"Plug 'DeleteTrailingWhitespace'
 
 " 保证关闭buffer的时候不关闭当前窗口
 Plug 'qpkorr/vim-bufkill'
