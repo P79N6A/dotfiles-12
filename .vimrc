@@ -5,6 +5,8 @@ set listchars=trail:·
 set list
 
 set mouse=a "使用鼠标
+" double click mouse highlight
+nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hls<cr>
 set nocompatible " 关闭 vi 兼容模式
 "set autoread " Set to auto read when a file is changed from the outside
 
@@ -53,7 +55,7 @@ set softtabstop=2 " 敲入tab键时实际占有的列数
 set autoindent smartindent shiftround "缩进配置
 set expandtab " 用spaces替换tabs
 set smarttab " 自动缩进
-set nowrap " 不要换行
+"set nowrap " 不要换行
 set scrolloff=3 " 往上下移动到头的时候的缓冲行数
 "set list listchars=eol:¬,tab:▸\ ,trail:.,
 " Configure backspace so it cts s it should act
@@ -114,7 +116,7 @@ fun! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre !markdown :call <SID>StripTrailingWhitespaces()
 
 """"""""""""""""""""""""""""
 " Plugin Manager(vim-plug) "
@@ -245,15 +247,34 @@ Plug 'qpkorr/vim-bufkill'
 
 " 全局搜索
 "Plug 'Shougo/unite.vim'
-Plug 'ag.vim'
-  "let g:ag_working_path_mode="r"
-  let g:agprg = 'ag --nogroup --nocolor --column --ignore dist'
-  " 禁止快捷键,如果是splite打开的话会创建一个空白的buffer
-  let g:ag_apply_qmappings=1
-  let g:ag_highlight=1
+Plug 'dkprice/vim-easygrep'
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
+  let g:EasyGrepCommand=1
+  "let g:EasyGrepOpenWindowOnMatch=0 
+  let g:EasyGrepJumpToMatch=0
+  "let g:EasyGrepWindow=1
+  "let g:EasyGrepFileAssociationsInExplorer=1
+  let g:EasyGrepRecursive=1 
+  "let g:EasyGrepAllOptionsInExplorer=1
+  let g:EasyGrepFilesToExclude='.svn,.git,dist,autoconfig,node_modules,node_modules_old'
+  let g:EasyGrepRoot = "search:.git,.hg,.svn"
+"Plug 'ag.vim'
+  ""let g:ag_working_path_mode="r"
+  "let g:agprg = 'ag --nogroup --nocolor --column --ignore dist'
+  "" 禁止快捷键,如果是splite打开的话会创建一个空白的buffer
+  "let g:ag_apply_qmappings=1
+  "let g:ag_highlight=1
 Plug 'kien/ctrlp.vim'
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|site_packages\|venv\|jupiter\/static\|jupiter\/template'
   let g:ctrlp_show_hidden=1 "scan dot files
+  " use ag as the ctrip command
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden 
+      "\ --ignore .git 
+      "\ --ignore out 
+      "\ --ignore .svn 
+      "\ --ignore .hg 
+      "\ --ignore .DS_Store
+      "\ -g ""'
 
 " 语法检查(打开有性能问题)
 Plug 'scrooloose/syntastic'
@@ -321,6 +342,11 @@ if has('gui_running')
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12'
   " nerttree不显示scrollbar
   set guioptions-=L
+endif
+
+" for iterm3
+if has('mouse_sgr')
+  set ttymouse=sgr
 endif
 
 " tmux
