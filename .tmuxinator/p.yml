@@ -44,6 +44,17 @@ windows:
       panes:
         -
         - npm run start
+  - pajk-zhilin:
+      root: ~/c/pa/pajk-zhilin
+      layout: main-vertical
+      panes:
+        -
+  - troy-web:
+      root: ~/c/pa/troy-web
+      layout: main-vertical
+      panes:
+        -
+        - npm run start
   - pbdm:
       root: ~/c/pbdm
       layout: main-vertical
@@ -51,3 +62,16 @@ windows:
         -
         - npm run wstart
         - npm run debug
+  - playground:
+      root: ~/c/playground
+      layout: main-vertical
+      panes:
+        -
+  - config:
+      root: ~/dotfiles
+      layout: tiled
+      panes:
+        - vim ~/.vimrc
+        - vim ~/.zshrc
+        - vim ~/.tmux.conf
+        - vim ~/.tmuxinator/p.yml

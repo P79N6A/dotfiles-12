@@ -1,9 +1,4 @@
 set encoding=utf8 " 默认编码
-
-" highlight whitespace
-set listchars=trail:·
-set list
-
 set mouse=a "使用鼠标
 " double click mouse highlight
 nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hls<cr>
@@ -11,17 +6,27 @@ set nocompatible " 关闭 vi 兼容模式
 "set autoread " Set to auto read when a file is changed from the outside
 
 "在执行宏命令时，不进行显示重绘；在宏命令执行完成后，一次性重绘，以便提高性能。
-set lazyredraw
-set ttyfast
+" set lazyredraw
+" set ttyfast
 
 syntax on " 语法高亮
 set background=dark
+
+" for onedark colorscheme
+" tmux
+if exists('$TMUX')
+  set term=xterm-256color
+endif
+if (has("termguicolors"))
+  set termguicolors
+endif
+" let g:onedark_terminal_italics=1
+" let g:onedark_termcolors=16
+colorscheme onedark
+
 "colorscheme molokai
 "colorscheme solarized
 "colorscheme desert
-colorscheme onedark
-let g:onedark_terminal_italics=1
-
 "colorscheme black_angus
 
 " diff highlight
@@ -57,7 +62,10 @@ set expandtab " 用spaces替换tabs
 set smarttab " 自动缩进
 "set nowrap " 不要换行
 set scrolloff=3 " 往上下移动到头的时候的缓冲行数
-"set list listchars=eol:¬,tab:▸\ ,trail:.,
+" highlight whitespace
+" set list listchars=tab:▸\ ,trail:·
+set list listchars=trail:·
+
 " Configure backspace so it cts s it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -69,7 +77,6 @@ set noswapfile
 
 " 不用保存也可以切换buffer
 set hidden
-
 """"""""""""""""""""""""""""
 " key mapping
 """"""""""""""""""""""""""""
@@ -110,13 +117,13 @@ map <C-c> :BD<cr>
 nnoremap gp `[v`]
 
 " delete whitespace onsave
-fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-autocmd BufWritePre !markdown :call <SID>StripTrailingWhitespaces()
+" fun! <SID>StripTrailingWhitespaces()
+    " let l = line(".")
+    " let c = col(".")
+    " %s/\s\+$//e
+    " call cursor(l, c)
+" endfun
+" autocmd BufWritePre !markdown :call <SID>StripTrailingWhitespaces()
 
 """"""""""""""""""""""""""""
 " Plugin Manager(vim-plug) "
@@ -138,10 +145,11 @@ Plug 'The-NERD-tree', { 'on':  'NERDTreeToggle' }
   " open nerdtree by default
   "autocmd StdinReadPre * let s:std_in=1
   "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-  let NERDTreeMinimalUI = 1 " 不显示帮助面板
-  let g:NERDTreeHijackNetrw=0
+  let g:NERDTreeMinimalUI = 1 " 不显示帮助面板
+  " let g:NERDTreeHijackNetrw=0
   let g:NERDTreeShowHidden=1 "show hidden files by default
   let g:NERDTreeMouseMode=3 "single click both nodes
+  let g:NERDTreeAutoDeleteBuffer=1
   let g:NERDTreeIgnore=['\.git$', '\.DS_Store$','\~$']
   map <C-n> :NERDTreeToggle<CR>
   " active only one nerdtree
@@ -149,10 +157,16 @@ Plug 'The-NERD-tree', { 'on':  'NERDTreeToggle' }
     "let g:nerdtree_tabs_open_on_gui_startup = 0
   " close vim if the only window left open is a NERDTree
   "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  " relative number and absolute number
+  Plug 'myusuf3/numbers.vim'
+  let g:NERDTreeShowLineNumbers=1
+  autocmd BufEnter NERD_* setlocal rnu
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 
 " commenter
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
+"   let g:NERDSpaceDelims = 1
+Plug 'tomtom/tcomment_vim'
 
 " indentLine
 Plug 'Yggdroot/indentLine'
@@ -164,12 +178,13 @@ Plug 'Yggdroot/indentLine'
 " git
 Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-  " may cause lag when set to 1
-  let g:gitgutter_realtimeltime = 0
-  let g:gitgutter_eager = 0
+  " may cause lag when set to 1 for these two below
+  " let g:gitgutter_realtimeltime = 0
+  " let g:gitgutter_eager = 0
 
-" relative number and absolute number
-Plug 'myusuf3/numbers.vim'
+
+" " surrounding
+" Plug 'tpope/vim-surround'
 
 " 自动下载所有主题
 "Plug 'flazz/vim-colorschemes'
@@ -198,18 +213,19 @@ Plug 'myusuf3/numbers.vim'
   "Plug 'marijnh/tern_for_vim'
 
 " 自动补全
-"Plug 'ervandew/supertab'
-  "autocmd FileType *
-    "\ if &omnifunc != '' |
-    "\   call SuperTabChain(&omnifunc, '<c-p>') |
-    "\   call SuperTabSetDefaultCompletionType('<c-x><c-u>') |
-    "\ endif
+Plug 'ervandew/supertab'
+  autocmd FileType *
+    \ if &omnifunc != '' |
+    \   call SuperTabChain(&omnifunc, '<c-p>') |
+    \   call SuperTabSetDefaultCompletionType('<c-x><c-u>') |
+    \ endif
 
 " Autobuild
 "Plug 'tpope/vim-dispatch'
 
 " 设置状态栏,顶部buffer栏
 Plug 'bling/vim-airline'
+  let g:airline_theme='onedark'
   " 使用powerline字体
   let g:airline_powerline_fonts = 1
   " 防止切换到 normal 模式时候的延迟
@@ -221,7 +237,10 @@ Plug 'bling/vim-airline'
     " long:   overlong lines
     " trailing: trailing whitespace
     " mixed-indent-file: different indentation in different lines
-  let g:airline#extensions#whitespace#checks = ['trailing']
+  let g:airline#extensions#whitespace#checks = []
+  " markdown不需要监测
+  "autocmd FileType * unlet! g:airline#extensions#whitespace#checks
+  "autocmd FileType markdown let g:airline#extensions#whitespace#checks = []
   let g:airline#extensions#syntastic#enabled = 0
 
   let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -289,14 +308,15 @@ Plug 'scrooloose/syntastic'
 "Plug 'heavenshell/vim-jsdoc'
 "nmap <C-l> <Plug>(jsdoc)
 
-" 万能语法高亮,暂时关闭`
-"Plug 'sheerun/vim-polyglot', { 'do': './build'}
+" 万能语法高亮
+" Plug 'sheerun/vim-polyglot', { 'do': './build'}
 " markdown
 " tabular is required by vim-markdown
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
   let g:vim_markdown_toc_autofit = 1
   let g:vim_markdown_folding_disabled = 1
   let g:vim_markdown_conceal = 0
+  let g:vim_markdown_new_list_item_indent = 0 
   let g:vim_markdown_fenced_languages = ['js=javascript', 'php=php', 'css=css', 'html=html']
 
 " React相关
@@ -323,7 +343,7 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'honza/vim-snippets'
 
 " 普通模式下输入法为英文(have bugs)
-"Plug 'CodeFalling/fcitx-vim-osx'
+" Plug 'CodeFalling/fcitx-vim-osx'
 
 " 平滑滚动
 "Plug 'yonchu/accelerated-smooth-scroll'
@@ -349,7 +369,3 @@ if has('mouse_sgr')
   set ttymouse=sgr
 endif
 
-" tmux
-"if exists('$TMUX')
-  set term=screen-256color
-"endif

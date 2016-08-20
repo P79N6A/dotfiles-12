@@ -7,10 +7,12 @@ export EDITOR='vim'
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
-#ZSH_THEME="lambda-mod"
+ZSH_THEME="agnoster"
+# ZSH_THEME="pure"
+# ZSH_THEME="lambda-mod"
 #ZSH_THEME="bureau"
 ZSH_THEME="ys"
+# ZSH_THEME="michelebologna"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,7 +56,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode tmux osx z docker)
+plugins=(git tmux osx z docker zsh-syntax-highlighting)
 
 # User configuration
 
@@ -88,6 +90,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# ignore ctrl-d to close window
+set -o ignoreeof
+
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --cache=$HOME/.npm/.cache/cnpm \
   --disturl=https://npm.taobao.org/dist \
@@ -102,4 +107,5 @@ export PATH="/usr/local/sbin:$PATH"
 source ~/.bin/tmuxinator.zsh
 export DISABLE_AUTO_TITLE=true
 alias mux='tmuxinator'
-export PATH="/usr/local/sbin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
