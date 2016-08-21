@@ -40,10 +40,11 @@ colorscheme onedark
 
 set number " 显示行号
 "set relativenumber
-set cursorline " 突出显示当前行
+" set cursorline " 突出显示当前行(comment it for better performance)
 "set cursorcolumn " 突出显示当前列
+set synmaxcol=200 " max highlight column number, reduce it for better performance
 set ruler " 显示ruler
-set colorcolumn=80
+" set colorcolumn=80 " disable it for better performance
 set showcmd " 输入的命令显示出来，看的清楚些
 set laststatus=2 "显示状态栏
 set wildmenu " Ex模式下自动补全添加单行菜单提
@@ -140,7 +141,7 @@ call plug#begin('~/.vim/plugged')
 " chinese document
 Plug 'asins/vimcdoc'
 
-" 文件树
+" source tree
 Plug 'The-NERD-tree', { 'on':  'NERDTreeToggle' }
   " open nerdtree by default
   "autocmd StdinReadPre * let s:std_in=1
@@ -170,7 +171,10 @@ Plug 'tomtom/tcomment_vim'
 
 " indentLine
 Plug 'Yggdroot/indentLine'
-  let g:indentLine_color_term = 239
+  " let g:indentLine_color_term = 239
+  " let g:indentLine_color_gui = '#2C323C'
+  let g:indentLine_color_gui = '#3E4452'
+  let g:indentLine_char = '│'
   " json文件如果开了会不显示"号,  fix https://github.com/Yggdroot/indentLine/issues/140
   Plug 'elzr/vim-json'
     let g:vim_json_syntax_conceal = 0
