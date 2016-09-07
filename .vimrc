@@ -28,10 +28,6 @@ colorscheme onedark
 "colorscheme solarized
 "colorscheme desert
 "colorscheme black_angus
-
-" diff highlight
-"highlight DiffAdd cterm=NONE ctermfg=bg ctermbg=Green gui=NONE guifg=bg guibg=Green
-"highlight DiffDelete cterm=NONE ctermfg=bg ctermbg=Red gui=NONE guifg=bg guibg=Red
 "highlight DiffChange cterm=NONE ctermfg=bg ctermbg=Yellow gui=NONE guifg=bg guibg=Yellow
 "highlight DiffText cterm=NONE ctermfg=bg ctermbg=Magenta gui=NONE guifg=bg guibg=Magenta
 " serch highlight, from molokai
@@ -40,12 +36,12 @@ colorscheme onedark
 
 set number " 显示行号
 "set relativenumber
-" set cursorline " 突出显示当前行(comment it for better performance)
+" set cursorline " 突出显示当前行(disable it for better performance)
 "set cursorcolumn " 突出显示当前列
 set synmaxcol=200 " max highlight column number, reduce it for better performance
 set ruler " 显示ruler
 " set colorcolumn=80 " disable it for better performance
-set showcmd " 输入的命令显示出来，看的清楚些
+" set showcmd " 输入的命令显示出来，disable for better performance
 set laststatus=2 "显示状态栏
 set wildmenu " Ex模式下自动补全添加单行菜单提
 
@@ -145,6 +141,13 @@ Plug 'asins/vimcdoc'
 Plug 'The-NERD-tree', { 'on':  'NERDTreeToggle' }
   " open nerdtree by default
   "autocmd StdinReadPre * let s:std_in=1
+  " open nerdtree when no file argement provided
+  function! StartUp()
+    if 0 == argc()
+      NERDTree
+    end
+  endfunction
+  autocmd VimEnter * call StartUp()
   "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   let g:NERDTreeMinimalUI = 1 " 不显示帮助面板
   " let g:NERDTreeHijackNetrw=0
@@ -223,6 +226,8 @@ Plug 'ervandew/supertab'
     \   call SuperTabChain(&omnifunc, '<c-p>') |
     \   call SuperTabSetDefaultCompletionType('<c-x><c-u>') |
     \ endif
+
+" Plug 'ajh17/VimCompletesMe'
 
 " Autobuild
 "Plug 'tpope/vim-dispatch'
@@ -310,7 +315,6 @@ Plug 'scrooloose/syntastic'
   let g:syntastic_error_symbol = '✗'
 
 "Plug 'heavenshell/vim-jsdoc'
-"nmap <C-l> <Plug>(jsdoc)
 
 " 万能语法高亮
 " Plug 'sheerun/vim-polyglot', { 'do': './build'}
@@ -322,6 +326,9 @@ Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
   let g:vim_markdown_conceal = 0
   let g:vim_markdown_new_list_item_indent = 0 
   let g:vim_markdown_fenced_languages = ['js=javascript', 'php=php', 'css=css', 'html=html']
+
+" 'gf' to jump to imported file
+Plug 'moll/vim-node'
 
 " React相关
 " Required by vim-jsx

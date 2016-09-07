@@ -108,4 +108,10 @@ source ~/.bin/tmuxinator.zsh
 export DISABLE_AUTO_TITLE=true
 alias mux='tmuxinator'
 
+# proxy
+alias proxy="export http_proxy=\"http://127.0.0.1:1080\" \
+  export https_proxy=\"http://127.0.0.1:1080\""
+alias noproxy="export http_proxy=\"\"\
+  export https_proxy=\"\""
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

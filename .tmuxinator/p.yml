@@ -32,41 +32,56 @@ windows:
       layout: main-vertical
       panes:
         -
+        - vim ~/c/pbdm/posts/others/2016-09-01-temp.md
   - health-circle:
       root: ~/c/pa/health-circle
       layout: main-vertical
       panes:
-        -
+        - vim
         - npm run start
-  - pajk-plugin:
-      root: ~/c/pa/pajk-plugin
+  - overwatch:
+      root: ~/c/pa/overwatch
       layout: main-vertical
       panes:
-        -
+        - vim
         - npm run start
+  - shiva:
+      root: ~/c/pa/shiva
+      layout: main-vertical
+      panes:
+        - vim
+        -
+  # - pajk-plugin:
+  #     root: ~/c/pa/pajk-plugin
+  #     layout: main-vertical
+  #     panes:
+  #       -
+  #       - npm run start
   - pajk-zhilin:
       root: ~/c/pa/pajk-zhilin
       layout: main-vertical
       panes:
-        -
+        - vim
   - troy-web:
       root: ~/c/pa/troy-web
       layout: main-vertical
       panes:
-        -
+        - vim
+        - npm run start-f
         - npm run start
   - pbdm:
       root: ~/c/pbdm
       layout: main-vertical
       panes:
-        -
+        - vim
+        - npm run reload 
         - npm run wstart
         - npm run debug
   - playground:
       root: ~/c/playground
       layout: main-vertical
       panes:
-        -
+        - vim
   - config:
       root: ~/dotfiles
       layout: tiled
