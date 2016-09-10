@@ -314,6 +314,23 @@ Plug 'scrooloose/syntastic'
   let g:syntastic_warning_symbol='⚠'
   let g:syntastic_error_symbol = '✗'
 
+" disable scrooloose when file is larger than 1mb
+let g:LargeFile = 1
+" augroup LargeFile 
+ autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile * 1024 * 10 || f == -2 | call BigFile() | endif
+" augroup END
+
+function BigFile()
+  let b:syntastic_mode = "passive"
+  SyntasticReset
+  " echo 'disabled syntastic in files larger than 1mb'
+endfunction
+
+" make large file quicker
+Plug 'mhinz/vim-hugefile'
+ let g:hugefile_trigger_size=1
+" Plug 'Maxlufs/LargeFile.vim'
+
 "Plug 'heavenshell/vim-jsdoc'
 
 " 万能语法高亮
@@ -352,6 +369,7 @@ Plug 'SirVer/ultisnips'
 
 Plug 'mlaursen/vim-react-snippets'
 Plug 'honza/vim-snippets'
+
 
 " 普通模式下输入法为英文(have bugs)
 " Plug 'CodeFalling/fcitx-vim-osx'
