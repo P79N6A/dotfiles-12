@@ -320,7 +320,7 @@ let g:LargeFile = 1
  autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile * 1024 * 10 || f == -2 | call BigFile() | endif
 " augroup END
 
-function BigFile()
+function! BigFile()
   let b:syntastic_mode = "passive"
   SyntasticReset
   " echo 'disabled syntastic in files larger than 1mb'
@@ -346,6 +346,8 @@ Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 " 'gf' to jump to imported file
 Plug 'moll/vim-node'
+
+Plug 'mattn/emmet-vim'
 
 " React相关
 " Required by vim-jsx
