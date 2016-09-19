@@ -333,27 +333,30 @@ Plug 'mhinz/vim-hugefile'
 
 "Plug 'heavenshell/vim-jsdoc'
 
-" 万能语法高亮
-" Plug 'sheerun/vim-polyglot', { 'do': './build'}
-" markdown
-" tabular is required by vim-markdown
-Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-  let g:vim_markdown_toc_autofit = 1
-  let g:vim_markdown_folding_disabled = 1
-  let g:vim_markdown_conceal = 0
-  let g:vim_markdown_new_list_item_indent = 0 
-  let g:vim_markdown_fenced_languages = ['js=javascript', 'php=php', 'css=css', 'html=html']
-
 " 'gf' to jump to imported file
 Plug 'moll/vim-node'
 
 Plug 'mattn/emmet-vim'
 
-" React相关
-" Required by vim-jsx
-Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
-  "for react jsx, JSX in .js files
-  let g:jsx_ext_required = 0
+""""""""""""""""""""
+" syntax highlight "
+""""""""""""""""""""
+
+" 万能语法高亮
+Plug 'sheerun/vim-polyglot', { 'do': './build'}
+" markdown
+" tabular is required by vim-markdown
+" Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+"   let g:vim_markdown_toc_autofit = 1
+"   let g:vim_markdown_folding_disabled = 1
+"   let g:vim_markdown_conceal = 0
+"   let g:vim_markdown_new_list_item_indent = 0 
+"   let g:vim_markdown_fenced_languages = ['js=javascript', 'php=php', 'css=css', 'html=html']
+
+" Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
+"   "for react jsx, JSX in .js files
+"   let g:jsx_ext_required = 0
+
 
 "vim-react-snippets(replaced by mlaursen/vim-react-snippets)
   "Plug 'justinj/vim-react-snippets'
@@ -371,7 +374,6 @@ Plug 'SirVer/ultisnips'
 
 Plug 'mlaursen/vim-react-snippets'
 Plug 'honza/vim-snippets'
-
 
 " 普通模式下输入法为英文(have bugs)
 " Plug 'CodeFalling/fcitx-vim-osx'
