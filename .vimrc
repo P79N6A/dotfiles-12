@@ -74,6 +74,11 @@ set noswapfile
 
 " 不用保存也可以切换buffer
 set hidden
+
+set foldmethod=syntax
+" set foldlevel=2
+set foldnestmax=2
+" set foldlevelstart=1
 """"""""""""""""""""""""""""
 " key mapping
 """"""""""""""""""""""""""""
@@ -162,9 +167,9 @@ Plug 'The-NERD-tree', { 'on':  'NERDTreeToggle' }
   " close vim if the only window left open is a NERDTree
   "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   " relative number and absolute number
-  Plug 'myusuf3/numbers.vim'
-  let g:NERDTreeShowLineNumbers=1
-  autocmd BufEnter NERD_* setlocal rnu
+  " Plug 'myusuf3/numbers.vim'
+  " let g:NERDTreeShowLineNumbers=1
+  " autocmd BufEnter NERD_* setlocal rnu
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 
 " commenter
