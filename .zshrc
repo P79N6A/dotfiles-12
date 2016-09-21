@@ -100,7 +100,11 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 alias server='python -m SimpleHTTPServer'
 alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
+
+# alias vim='/usr/local/Cellar/macvim/8.0-110/MacVim.app/Contents/MacOS/Vim'
+alias vim="mvim -v"
 alias vi='vim --noplugin'
+
 export PATH="/usr/local/sbin:$PATH"
 
 # for mux of tmux
@@ -113,5 +117,6 @@ alias proxy="export http_proxy=\"http://127.0.0.1:1080\" \
   export https_proxy=\"http://127.0.0.1:1080\""
 alias noproxy="export http_proxy=\"\"\
   export https_proxy=\"\""
+
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

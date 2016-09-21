@@ -12,14 +12,6 @@ set nocompatible " 关闭 vi 兼容模式
 syntax on " 语法高亮
 set background=dark
 
-" for onedark colorscheme
-" tmux
-if exists('$TMUX')
-  set term=xterm-256color
-endif
-if (has("termguicolors"))
-  set termguicolors
-endif
 " let g:onedark_terminal_italics=1
 " let g:onedark_termcolors=16
 colorscheme onedark
@@ -71,6 +63,8 @@ set whichwrap+=<,>,h,l
 set nobackup " 覆盖文件时不备份
 set nowb
 set noswapfile
+
+set noshowmatch         " Don't match parentheses/brackets
 
 " 不用保存也可以切换buffer
 set hidden
@@ -236,7 +230,7 @@ Plug 'ervandew/supertab'
 Plug 'bling/vim-airline'
   let g:airline_theme='onedark'
   " 使用powerline字体
-  let g:airline_powerline_fonts = 1
+  " let g:airline_powerline_fonts = 1
   " 防止切换到 normal 模式时候的延迟
   set ttimeoutlen=0
   " enable tabline
@@ -311,8 +305,8 @@ Plug 'scrooloose/syntastic'
   let g:syntastic_javascript_checkers = ['eslint']
   " make eslint faster
   let g:syntastic_javascript_eslint_exec = 'eslint_d'
-  let g:syntastic_warning_symbol='⚠'
-  let g:syntastic_error_symbol = '✗'
+  let g:syntastic_warning_symbol='W'
+  let g:syntastic_error_symbol = 'E'
 
 " disable scrooloose when file is larger than 1mb
 let g:LargeFile = 1
@@ -326,10 +320,6 @@ function! BigFile()
   " echo 'disabled syntastic in files larger than 1mb'
 endfunction
 
-" make large file quicker
-Plug 'mhinz/vim-hugefile'
- let g:hugefile_trigger_size=1
-" Plug 'Maxlufs/LargeFile.vim'
 
 "Plug 'heavenshell/vim-jsdoc'
 
@@ -369,8 +359,8 @@ Plug 'sheerun/vim-polyglot', { 'do': './build'}
     "Plug 'bentayloruk/vim-react-es6-snippets'
 
 " snippets
-Plug 'SirVer/ultisnips'
-  let g:UltiSnipsJumpForwardTrigger="<c-f>"
+" Plug 'SirVer/ultisnips'
+"   let g:UltiSnipsJumpForwardTrigger="<c-f>"
 
 Plug 'mlaursen/vim-react-snippets'
 Plug 'honza/vim-snippets'
@@ -387,15 +377,32 @@ Plug 'honza/vim-snippets'
 
 "Plug 'lornix/vim-scrollbar'
 
+" guiset and tmux
+if has('gui_running')
+  set guifont=Hack\ Regular:h12'
+  " nerttree不显示scrollbar
+  set guioptions-=L
+elseif exists('$TMUX')
+
+  " make large file quicker
+  Plug 'mhinz/vim-hugefile'
+  let g:hugefile_trigger_size=1
+
+  " for tmux
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  else
+    set term=xterm-256color
+  endif
+endif
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 call plug#end()
 
 
-" guiset
-if has('gui_running')
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12'
-  " nerttree不显示scrollbar
-  set guioptions-=L
-endif
 
 " for iterm3
 if has('mouse_sgr')
