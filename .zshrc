@@ -120,3 +120,7 @@ alias noproxy="export http_proxy=\"\"\
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
+# infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+# tic $TERM.ti

@@ -390,6 +390,7 @@ elseif exists('$TMUX')
 
   " for tmux
   if (has("nvim"))
+    nmap <bs> <C-h>
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   else
     set term=xterm-256color
