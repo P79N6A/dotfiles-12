@@ -86,7 +86,6 @@
     projectHome: "/Users/bopeng/c"
   docblockr: {}
   editor:
-    fontSize: 12
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true

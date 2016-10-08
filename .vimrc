@@ -68,6 +68,12 @@ set noshowmatch         " Don't match parentheses/brackets
 
 " 不用保存也可以切换buffer
 set hidden
+
+set foldmethod=syntax
+" set foldlevel=2
+" set foldnestmax=2
+set foldlevelstart=99
+"
 """"""""""""""""""""""""""""
 " key mapping
 """"""""""""""""""""""""""""
@@ -359,8 +365,8 @@ Plug 'sheerun/vim-polyglot', { 'do': './build'}
     "Plug 'bentayloruk/vim-react-es6-snippets'
 
 " snippets
-" Plug 'SirVer/ultisnips'
-"   let g:UltiSnipsJumpForwardTrigger="<c-f>"
+Plug 'SirVer/ultisnips'
+  let g:UltiSnipsJumpForwardTrigger="<c-f>"
 
 Plug 'mlaursen/vim-react-snippets'
 Plug 'honza/vim-snippets'

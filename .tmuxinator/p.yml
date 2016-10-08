@@ -90,8 +90,8 @@ windows:
         - #vim
   - config:
       root: ~/dotfiles
-      # layout: tiled
-      layout: even-horizontal
+      layout: tiled
+      # layout: even-horizontal
       panes:
         - vim ~/.vimrc
         - vim ~/.zshrc
