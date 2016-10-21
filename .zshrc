@@ -102,8 +102,8 @@ alias server='python -m SimpleHTTPServer'
 alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
 
 # alias vim='/usr/local/Cellar/macvim/8.0-110/MacVim.app/Contents/MacOS/Vim'
-alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-alias vim="mvim -v"
+# alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+# alias vim="mvim -v"
 alias vi='vim --noplugin'
 
 export PATH="/usr/local/sbin:$PATH"

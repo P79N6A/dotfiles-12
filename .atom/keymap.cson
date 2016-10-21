@@ -1,10 +1,11 @@
 'body':
-  'alt-cmd-h': 'window:focus-pane-on-left'
-  'alt-cmd-l': 'window:focus-pane-on-right'
-  'alt-cmd-k': 'window:focus-pane-above'
-  'alt-cmd-j': 'window:focus-pane-below'
+  # 'alt-cmd-h': 'window:focus-pane-on-left'
+  # 'alt-cmd-l': 'window:focus-pane-on-right'
+  # 'alt-cmd-k': 'window:focus-pane-above'
+  # 'alt-cmd-j': 'window:focus-pane-below'
   'ctrl-h': 'pane:show-previous-item'
   'ctrl-l': 'pane:show-next-item'
+  'ctrl-c': 'core:close'
 'atom-text-editor':
   'ctrl-alt-j': 'term3:open-split-down'
   'ctrl-alt-k': 'term3:open-split-up'
@@ -15,4 +16,11 @@
 'atom-workspace, atom-workspace atom-text-editor':
   'cmd-m': 'markdown-preview:toggle'
 '.platform-darwin':
-  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder',
+  'ctrl-w w': 'nerd-treeview:toggle-focus',
+'atom-text-editor.vim-mode:not(.insert-mode)':
+  'ctrl-w w': 'nerd-treeview:toggle-focus',
+'atom-text-editor.vim-mode':
+  'ctrl-c': 'core:close'
+'.platform-darwin atom-text-editor.vim-mode:not(.normal-mode)':
+  'ctrl-c': 'core:close'
