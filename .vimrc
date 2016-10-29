@@ -407,6 +407,12 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" https://github.com/vim/vim/issues/804
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  set t_ut=
+endif
 call plug#end()
 
 
