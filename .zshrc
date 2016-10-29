@@ -7,7 +7,7 @@ export EDITOR='vim'
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 # ZSH_THEME="pure"
 # ZSH_THEME="lambda-mod"
 #ZSH_THEME="bureau"
@@ -99,7 +99,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --userconfig=$HOME/.cnpmrc"
 
 alias server='python -m SimpleHTTPServer'
-alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
+# alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
 
 # alias vim='/usr/local/Cellar/macvim/8.0-110/MacVim.app/Contents/MacOS/Vim'
 # alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
@@ -118,9 +118,6 @@ alias proxy="export http_proxy=\"http://127.0.0.1:1080\" \
   export https_proxy=\"http://127.0.0.1:1080\""
 alias noproxy="export http_proxy=\"\"\
   export https_proxy=\"\""
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
 # infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti

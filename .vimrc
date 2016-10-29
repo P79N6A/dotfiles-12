@@ -16,7 +16,7 @@ set background=dark
 " let g:onedark_termcolors=16
 colorscheme onedark
 
-"colorscheme molokai
+" colorscheme molokai
 "colorscheme solarized
 "colorscheme desert
 "colorscheme black_angus
@@ -343,11 +343,11 @@ Plug 'sheerun/vim-polyglot', { 'do': './build'}
 " markdown
 " tabular is required by vim-markdown
 " Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-"   let g:vim_markdown_toc_autofit = 1
-"   let g:vim_markdown_folding_disabled = 1
-"   let g:vim_markdown_conceal = 0
-"   let g:vim_markdown_new_list_item_indent = 0 
-"   let g:vim_markdown_fenced_languages = ['js=javascript', 'php=php', 'css=css', 'html=html']
+  let g:vim_markdown_toc_autofit = 1
+  let g:vim_markdown_folding_disabled = 1
+  let g:vim_markdown_conceal = 0
+  let g:vim_markdown_new_list_item_indent = 0 
+  let g:vim_markdown_fenced_languages = ['js=javascript', 'php=php', 'css=css', 'html=html']
 
 " Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 "   "for react jsx, JSX in .js files
@@ -390,7 +390,7 @@ if has('gui_running')
   set guioptions-=L
 elseif exists('$TMUX')
 
-  " make large file quicker
+  " make large file faster
   Plug 'mhinz/vim-hugefile'
   let g:hugefile_trigger_size=1
 
