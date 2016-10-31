@@ -91,12 +91,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ignore ctrl-d to close window
-set -o ignoreeof
+# set -o ignoreeof
 
-alias cnpm="npm --registry=https://registry.npm.taobao.org \
-  --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=https://npm.taobao.org/dist \
-  --userconfig=$HOME/.cnpmrc"
+# alias cnpm="npm --registry=https://registry.npm.taobao.org \
+#   --cache=$HOME/.npm/.cache/cnpm \
+#   --disturl=https://npm.taobao.org/dist \
+#   --userconfig=$HOME/.cnpmrc"
+#
+alias pnpm="npm --registry=http://10.0.128.44:7001/ \
+  --cache=$HOME/.pnpm/.cache/pnpm"
 
 alias server='python -m SimpleHTTPServer'
 # alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
