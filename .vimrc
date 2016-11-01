@@ -306,6 +306,13 @@ Plug 'kien/ctrlp.vim'
 
 " 语法检查(打开有性能问题)
 Plug 'w0rp/ale'
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠'
+" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+" let g:ale_echo_msg_error_str = '⨉'
+" let g:ale_echo_msg_warning_str = '⚠'
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Plug 'scrooloose/syntastic'
 "   let g:syntastic_check_on_open = 0
 "   let g:syntastic_check_on_wq = 1
