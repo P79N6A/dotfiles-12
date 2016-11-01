@@ -167,8 +167,7 @@
     WindowHeight: 100
   "tool-bar":
     position: "Left"
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode": {}
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"

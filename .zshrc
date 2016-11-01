@@ -98,7 +98,8 @@ source $ZSH/oh-my-zsh.sh
 #   --disturl=https://npm.taobao.org/dist \
 #   --userconfig=$HOME/.cnpmrc"
 #
-alias pnpm="npm --registry=http://10.0.128.44:7001/ \
+alias pnpm="cnpm --registry=http://10.0.128.44:7001 \
+  --registryweb=http://10.0.128.44:7002 \
   --cache=$HOME/.pnpm/.cache/pnpm"
 
 alias server='python -m SimpleHTTPServer'

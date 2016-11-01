@@ -52,8 +52,8 @@ set smarttab " 自动缩进
 "set nowrap " 不要换行
 set scrolloff=3 " 往上下移动到头的时候的缓冲行数
 " highlight whitespace
-" set list listchars=tab:▸\ ,trail:·
-set list listchars=trail:·
+set list listchars=tab:▸\ ,trail:·
+" set list listchars=trail:·
 
 " Configure backspace so it cts s it should act
 set backspace=eol,start,indent
@@ -172,15 +172,15 @@ Plug 'The-NERD-tree', { 'on':  'NERDTreeToggle' }
 "   let g:NERDSpaceDelims = 1
 Plug 'tomtom/tcomment_vim'
 
-" indentLine
-Plug 'Yggdroot/indentLine'
-  " let g:indentLine_color_term = 239
-  " let g:indentLine_color_gui = '#2C323C'
-  let g:indentLine_color_gui = '#3E4452'
-  let g:indentLine_char = '│'
-  " json文件如果开了会不显示"号,  fix https://github.com/Yggdroot/indentLine/issues/140
-  Plug 'elzr/vim-json'
-    let g:vim_json_syntax_conceal = 0
+" indentLine (make lag in html)
+" Plug 'Yggdroot/indentLine'
+"   " let g:indentLine_color_term = 239
+"   " let g:indentLine_color_gui = '#2C323C'
+"   let g:indentLine_color_gui = '#3E4452'
+"   let g:indentLine_char = '│'
+"   " json文件如果开了会不显示"号,  fix https://github.com/Yggdroot/indentLine/issues/140
+"   Plug 'elzr/vim-json'
+"     let g:vim_json_syntax_conceal = 0
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -305,14 +305,15 @@ Plug 'kien/ctrlp.vim'
       "\ -g ""'
 
 " 语法检查(打开有性能问题)
-Plug 'scrooloose/syntastic'
-  let g:syntastic_check_on_open = 0
-  let g:syntastic_check_on_wq = 1
-  let g:syntastic_javascript_checkers = ['eslint']
-  " make eslint faster
-  let g:syntastic_javascript_eslint_exec = 'eslint_d'
-  let g:syntastic_warning_symbol='W'
-  let g:syntastic_error_symbol = 'E'
+Plug 'w0rp/ale'
+" Plug 'scrooloose/syntastic'
+"   let g:syntastic_check_on_open = 0
+"   let g:syntastic_check_on_wq = 1
+"   let g:syntastic_javascript_checkers = ['eslint']
+"   " make eslint faster
+"   let g:syntastic_javascript_eslint_exec = 'eslint_d'
+"   let g:syntastic_warning_symbol='W'
+"   let g:syntastic_error_symbol = 'E'
 
 " disable scrooloose when file is larger than 1mb
 let g:LargeFile = 1
@@ -332,7 +333,7 @@ endfunction
 " 'gf' to jump to imported file
 Plug 'moll/vim-node'
 
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 
 """"""""""""""""""""
 " syntax highlight "
@@ -340,6 +341,7 @@ Plug 'mattn/emmet-vim'
 
 " 万能语法高亮
 Plug 'sheerun/vim-polyglot', { 'do': './build'}
+" let g:polyglot_disabled = ['jsx']
 " markdown
 " tabular is required by vim-markdown
 " Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
