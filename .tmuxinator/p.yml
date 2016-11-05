@@ -39,6 +39,11 @@ windows:
   #       - cd ~/c/pa/health-circle && npm run start
   #       - cd ~/c/pa/overwatch && npm run start
   #       - cd ~/c/pa/shiva && npm run start
+  - pajk-zhilin:
+      root: ~/c/pa/pajk-zhilin
+      layout: main-vertical
+      panes:
+        - #vim
   - health-circle:
       root: ~/c/pa/health-circle
       layout: main-vertical
@@ -63,18 +68,13 @@ windows:
   #     panes:
   #       -
   #       - npm run start
-  - pajk-zhilin:
-      root: ~/c/pa/pajk-zhilin
-      layout: main-vertical
-      panes:
-        - #vim
-  - troy-web:
-      root: ~/c/pa/troy-web
-      layout: main-vertical
-      panes:
-        - #vim
-        # - # npm run start-f
-        # - # npm run start
+  # - troy-web:
+  #     root: ~/c/pa/troy-web
+  #     layout: main-vertical
+  #     panes:
+  #       - #vim
+  #       # - # npm run start-f
+  #       # - # npm run start
   - pbdm:
       root: ~/c/pbdm
       layout: main-vertical

@@ -52,7 +52,7 @@ set smarttab " 自动缩进
 "set nowrap " 不要换行
 set scrolloff=3 " 往上下移动到头的时候的缓冲行数
 " highlight whitespace
-set list listchars=tab:▸\ ,trail:·
+" set list listchars=tab:▸\ ,trail:·
 " set list listchars=trail:·
 
 " Configure backspace so it cts s it should act
@@ -330,7 +330,7 @@ let g:LargeFile = 1
 
 function! BigFile()
   let b:syntastic_mode = "passive"
-  SyntasticReset
+  " SyntasticReset
   " echo 'disabled syntastic in files larger than 1mb'
 endfunction
 
