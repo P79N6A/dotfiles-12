@@ -381,6 +381,9 @@ Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'honza/vim-snippets'
 
+" change cursor shape when change mode
+Plug 'jszakmeister/vim-togglecursor'
+
 " 普通模式下输入法为英文(have bugs)
 " Plug 'CodeFalling/fcitx-vim-osx'
 
