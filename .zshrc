@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 #
 alias pnpm="cnpm --registry=http://10.0.128.44:7001 \
   --registryweb=http://10.0.128.44:7002 \
+  --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/ \
   --cache=$HOME/.pnpm/.cache/pnpm"
 
 alias server='python -m SimpleHTTPServer'
