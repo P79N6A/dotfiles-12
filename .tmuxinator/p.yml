@@ -81,6 +81,11 @@ windows:
       panes:
         - #vim
         # - #npm run start
+  - posts:
+      root: ~/c/posts
+      layout: main-vertical
+      panes:
+        - 
   - playground:
       root: ~/c/playground
       layout: main-vertical

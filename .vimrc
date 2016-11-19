@@ -306,7 +306,7 @@ Plug 'kien/ctrlp.vim'
 
 " 语法检查(打开有性能问题)
 Plug 'w0rp/ale'
-let g:ale_sign_error = '⨉'
+let g:ale_sign_error = 'x'
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_column_always = 1
 " let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -388,7 +388,8 @@ Plug 'jszakmeister/vim-togglecursor'
 " Plug 'CodeFalling/fcitx-vim-osx'
 
 " 平滑滚动
-"Plug 'yonchu/accelerated-smooth-scroll'
+" Plug 'yonchu/accelerated-smooth-scroll'
+Plug 'joeytwiddle/sexy_scroller.vim'
 
 " 多鼠标
 "Plug 'terryma/vim-multiple-cursors'
