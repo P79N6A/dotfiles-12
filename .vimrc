@@ -3,7 +3,7 @@ set mouse=a "使用鼠标
 " double click mouse highlight
 nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hls<cr>
 set nocompatible " 关闭 vi 兼容模式
-"set autoread " Set to auto read when a file is changed from the outside
+set autoread " Set to auto read when a file is changed from the outside
 
 "在执行宏命令时，不进行显示重绘；在宏命令执行完成后，一次性重绘，以便提高性能。
 " set lazyredraw
@@ -89,6 +89,7 @@ command! W w
 command! Q q
 command! Wq wq
 command! WQ wq
+command! Qa qa
 "nnoremap j jzz
 "nnoremap k kzz
 " 查找时自动滚屏

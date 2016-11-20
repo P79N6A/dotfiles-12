@@ -85,7 +85,7 @@ windows:
       root: ~/c/posts
       layout: main-vertical
       panes:
-        - 
+        - vim
   - playground:
       root: ~/c/playground
       layout: main-vertical
