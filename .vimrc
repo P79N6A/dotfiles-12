@@ -114,6 +114,10 @@ map <C-c> :BD<cr>
 " 复制粘贴后选中粘贴的内容
 nnoremap gp `[v`]
 
+inoremap <C-h> <left>
+inoremap <C-j> <down>
+inoremap <C-k> <up>
+inoremap <C-l> <right>
 " delete whitespace onsave
 " fun! <SID>StripTrailingWhitespaces()
     " let l = line(".")
