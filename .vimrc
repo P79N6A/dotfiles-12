@@ -1,8 +1,16 @@
-set encoding=utf8 " 默认编码
+" define a group `vimrc` and initialize.
+" http://rbtnn.hateblo.jp/entry/2014/12/28/010913
+augroup vimrc
+  autocmd!
+augroup END
+
+set encoding=utf8
+scriptencoding utf-8
+
 set mouse=a "使用鼠标
 " double click mouse highlight
 nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hls<cr>
-set nocompatible " 关闭 vi 兼容模式
+
 set autoread " Set to auto read when a file is changed from the outside
 
 "在执行宏命令时，不进行显示重绘；在宏命令执行完成后，一次性重绘，以便提高性能。
@@ -61,7 +69,7 @@ set whichwrap+=<,>,h,l
 
 " 不产生backup文件
 set nobackup " 覆盖文件时不备份
-set nowb
+set nowritebackup
 set noswapfile
 
 set noshowmatch         " Don't match parentheses/brackets
@@ -79,7 +87,7 @@ set foldlevelstart=99
 """"""""""""""""""""""""""""
 
 "修改leader键为逗号
-let mapleader=","
+let g:mapleader=','
 
 "使用左右光标键切换 buffer(relpaced by airline)
 "noremap <C-h> :bp<CR>
@@ -134,7 +142,7 @@ inoremap <C-l> <right>
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+  autocmd vimrc VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -152,7 +160,7 @@ Plug 'The-NERD-tree', { 'on':  'NERDTreeToggle' }
       NERDTree
     end
   endfunction
-  autocmd VimEnter * call StartUp()
+  autocmd vimrc VimEnter * call StartUp()
   "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   let g:NERDTreeMinimalUI = 1 " 不显示帮助面板
   " let g:NERDTreeHijackNetrw=0
@@ -169,7 +177,7 @@ Plug 'The-NERD-tree', { 'on':  'NERDTreeToggle' }
   " relative number and absolute number
   Plug 'myusuf3/numbers.vim'
   let g:NERDTreeShowLineNumbers=1
-  autocmd BufEnter NERD_* setlocal rnu
+  autocmd vimrc BufEnter NERD_* setlocal rnu
   Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 
 " commenter
@@ -226,7 +234,7 @@ Plug 'tpope/vim-fugitive'
 
 " 自动补全
 Plug 'ervandew/supertab'
-  autocmd FileType *
+  autocmd vimrc FileType *
     \ if &omnifunc != '' |
     \   call SuperTabChain(&omnifunc, '<c-p>') |
     \   call SuperTabSetDefaultCompletionType('<c-x><c-u>') |
@@ -290,7 +298,7 @@ Plug 'dkprice/vim-easygrep'
   let g:EasyGrepRecursive=1 
   "let g:EasyGrepAllOptionsInExplorer=1
   let g:EasyGrepFilesToExclude='.svn,.git,dist,autoconfig,node_modules,node_modules_old'
-  let g:EasyGrepRoot = "search:.git,.hg,.svn"
+  let g:EasyGrepRoot = 'search:.git,.hg,.svn'
 "Plug 'ag.vim'
   ""let g:ag_working_path_mode="r"
   "let g:agprg = 'ag --nogroup --nocolor --column --ignore dist'
@@ -331,11 +339,11 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " disable scrooloose when file is larger than 1mb
 let g:LargeFile = 1
 " augroup LargeFile 
- autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile * 1024 * 10 || f == -2 | call BigFile() | endif
+ autocmd vimrc BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile * 1024 * 10 || f == -2 | call BigFile() | endif
 " augroup END
 
 function! BigFile()
-  let b:syntastic_mode = "passive"
+  let b:syntastic_mode = 'passive'
   " SyntasticReset
   " echo 'disabled syntastic in files larger than 1mb'
 endfunction
@@ -381,7 +389,7 @@ Plug 'sheerun/vim-polyglot', { 'do': './build'}
 
 " snippets
 Plug 'SirVer/ultisnips'
-  let g:UltiSnipsJumpForwardTrigger="<c-f>"
+  let g:UltiSnipsJumpForwardTrigger='<c-f>'
 
 Plug 'mlaursen/vim-react-snippets'
 Plug 'honza/vim-snippets'
@@ -414,7 +422,7 @@ elseif exists('$TMUX')
   let g:hugefile_trigger_size=1
 
   " for tmux
-  if (has("nvim"))
+  if (has('nvim'))
     nmap <bs> <C-h>
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   else
@@ -422,12 +430,12 @@ elseif exists('$TMUX')
   endif
 endif
 
-if (has("termguicolors"))
+if (has('termguicolors'))
   set termguicolors
 endif
 
 " https://github.com/vim/vim/issues/804
-if &term =~ '256color'
+if &term =~? '256color'
   " disable Background Color Erase (BCE) so that color schemes
   " render properly when inside 256-color tmux and GNU screen.
   set t_ut=
