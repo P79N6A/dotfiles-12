@@ -101,7 +101,9 @@ source $ZSH/oh-my-zsh.sh
 alias pnpm="cnpm --registry=http://10.0.128.44:7001 \
   --registryweb=http://10.0.128.44:7002 \
   --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/ \
-  --cache=$HOME/.pnpm/.cache/pnpm"
+  --cache=$HOME/.pnpm/.cache/pnpm \
+  --fsevents_binary_host_mirror=https://npm.taobao.org/mirrors/fsevents/ \
+  --disturl=https://npm.taobao.org/dist"
 
 alias server='python -m SimpleHTTPServer'
 # alias pa='/Users/bopeng/weiyun/pa/scripts/login.sh'
