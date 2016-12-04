@@ -234,7 +234,8 @@ Plug 'tpope/vim-fugitive'
   "nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
   "nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
   " autocmd vimrc FileType js
   "   \ if &omnifunc != '' |
   "   " \   call SuperTabChain(&omnifunc, '<c-p>') |
