@@ -4,6 +4,8 @@ augroup vimrc
   autocmd!
 augroup END
 
+" set nocompatible
+
 set encoding=utf8
 scriptencoding utf-8
 
@@ -223,24 +225,28 @@ Plug 'tpope/vim-fugitive'
 "Plug 'mbbill/undotree'
  "nnoremap <leader>u :UndotreeToggle<cr>:UndotreeFocus<cr>
 
-" 代码自动补全
-"Plug 'Valloric/YouCompleteMe'
+" 自动补全
+" cause lag
+" Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-complete'}
   "let g:ycm_server_use_vim_stdout = 1
   "let g:ycm_server_log_level = 'debug'
   "nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
   "nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
   "nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-  "Plug 'marijnh/tern_for_vim'
-
-" 自动补全
 Plug 'ervandew/supertab'
-  autocmd vimrc FileType *
-    \ if &omnifunc != '' |
-    \   call SuperTabChain(&omnifunc, '<c-p>') |
-    \   call SuperTabSetDefaultCompletionType('<c-x><c-u>') |
-    \ endif
-
-" Plug 'ajh17/VimCompletesMe'
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+  " autocmd vimrc FileType js
+  "   \ if &omnifunc != '' |
+  "   " \   call SuperTabChain(&omnifunc, '<c-p>') |
+  "   " \   call SuperTabSetDefaultCompletionType('<c-x><c-u>') |
+  "   \ endif
+" Plug 'AutoComplPop'
+" Plug 'L9' | Plug 'othree/vim-autocomplpop'
+Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
+  set completeopt=menu
+  let g:tern_show_signature_in_pum = 1
+" let g:tern_map_keys = 1
+" let g:tern_show_argument_hints = 'on_hold'
 
 " Autobuild
 "Plug 'tpope/vim-dispatch'
@@ -376,7 +382,6 @@ Plug 'sheerun/vim-polyglot', { 'do': './build'}
 "   "for react jsx, JSX in .js files
 "   let g:jsx_ext_required = 0
 
-
 "vim-react-snippets(replaced by mlaursen/vim-react-snippets)
   "Plug 'justinj/vim-react-snippets'
 
@@ -396,6 +401,8 @@ Plug 'honza/vim-snippets'
 
 " change cursor shape when change mode
 Plug 'jszakmeister/vim-togglecursor'
+
+" Plug 'Raimondi/delimitMate'
 
 " 普通模式下输入法为英文(have bugs)
 " Plug 'CodeFalling/fcitx-vim-osx'
