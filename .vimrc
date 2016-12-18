@@ -95,11 +95,19 @@ let g:mapleader=','
 "noremap <C-h> :bp<CR>
 "noremap <C-l> :bn<CR>
 
-command! W w
-command! Q q
-command! Wq wq
-command! WQ wq
-command! Qa qa
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Qa! qa!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+cnoreabbrev Qa qa
+
 "nnoremap j jzz
 "nnoremap k kzz
 " 查找时自动滚屏
