@@ -16,8 +16,8 @@ nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\
 set autoread " Set to auto read when a file is changed from the outside
 
 "在执行宏命令时，不进行显示重绘；在宏命令执行完成后，一次性重绘，以便提高性能。
-" set lazyredraw
-" set ttyfast
+set lazyredraw
+set ttyfast
 
 syntax on " 语法高亮
 set background=dark
@@ -38,12 +38,12 @@ colorscheme onedark
 
 set number " 显示行号
 "set relativenumber
-" set cursorline " 突出显示当前行(disable it for better performance)
-"set cursorcolumn " 突出显示当前列
+set cursorline " 突出显示当前行(disable it for better performance)
+" set cursorcolumn " 突出显示当前列
 set synmaxcol=200 " max highlight column number, reduce it for better performance
 set ruler " 显示ruler
-" set colorcolumn=80 " disable it for better performance
-" set showcmd " 输入的命令显示出来，disable for better performance
+set colorcolumn=80 " disable it for better performance
+set showcmd " 输入的命令显示出来，disable for better performance
 set laststatus=2 "显示状态栏
 set wildmenu " Ex模式下自动补全添加单行菜单提
 
@@ -51,6 +51,8 @@ set hlsearch " 高亮搜索
 set incsearch " 在输入要搜索的文字时，vim会实时匹配
 set ignorecase " 忽略大小写
 set smartcase " 大小写非必敏感, 与ignorecase并用
+
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 
 " 排版,缩进相关
 set shiftwidth=2 " 默认缩进2个空格
@@ -132,10 +134,22 @@ map <C-c> :BD<cr>
 " 复制粘贴后选中粘贴的内容
 nnoremap gp `[v`]
 
+"" Move visual block
+" vnoremap J :m '>+1<CR>gv=gv
+" vnoremap K :m '<-2<CR>gv=gv
+
 inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
+
+" Remap VIM 0 to first non-blank character
+noremap 0 ^
+
+"" Vmap for maintain Visual Mode after shifting > and <
+vnoremap < <gv
+vnoremap > >gv
+
 " delete whitespace onsave
 " fun! <SID>StripTrailingWhitespaces()
     " let l = line(".")
@@ -227,7 +241,10 @@ Plug 'tpope/vim-fugitive'
 
 "Plug 'mattn/emmet-vim'
 
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
+  " nmap <F8> :TagbarToggle<CR>
+  " nmap <leader>t :TagbarToggle<CR>
+  nmap <C-t> :TagbarToggle<CR>
 
 " 后悔药
 "Plug 'mbbill/undotree'
@@ -269,6 +286,7 @@ Plug 'bling/vim-airline'
   set ttimeoutlen=0
   " enable tabline
   let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#buffer_idx_mode = 1
   " white space checks to enable
     " indent: mixed indent within a line
     " long:   overlong lines
@@ -279,8 +297,8 @@ Plug 'bling/vim-airline'
   "autocmd FileType * unlet! g:airline#extensions#whitespace#checks
   "autocmd FileType markdown let g:airline#extensions#whitespace#checks = []
   let g:airline#extensions#syntastic#enabled = 0
+  let g:airline#extensions#tagbar#enabled = 0
 
-  let g:airline#extensions#tabline#buffer_idx_mode = 1
   " TODO use for
   nmap <leader>1 <Plug>AirlineSelectTab1
   nmap <leader>2 <Plug>AirlineSelectTab2
@@ -334,12 +352,12 @@ Plug 'kien/ctrlp.vim'
 
 " 语法检查(打开有性能问题)
 Plug 'w0rp/ale'
-let g:ale_sign_error = 'x'
-let g:ale_sign_warning = '⚠'
-let g:ale_sign_column_always = 1
-" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-" let g:ale_echo_msg_error_str = '⨉'
-" let g:ale_echo_msg_warning_str = '⚠'
+  let g:ale_sign_error = 'x'
+  let g:ale_sign_warning = '⚠'
+  let g:ale_sign_column_always = 1
+  " let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+  " let g:ale_echo_msg_error_str = '⨉'
+  " let g:ale_echo_msg_warning_str = '⚠'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Plug 'scrooloose/syntastic'
@@ -350,18 +368,17 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "   let g:syntastic_javascript_eslint_exec = 'eslint_d'
 "   let g:syntastic_warning_symbol='W'
 "   let g:syntastic_error_symbol = 'E'
-
 " disable scrooloose when file is larger than 1mb
-let g:LargeFile = 1
-" augroup LargeFile 
- autocmd vimrc BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile * 1024 * 10 || f == -2 | call BigFile() | endif
-" augroup END
-
-function! BigFile()
-  let b:syntastic_mode = 'passive'
-  " SyntasticReset
-  " echo 'disabled syntastic in files larger than 1mb'
-endfunction
+" let g:LargeFile = 1
+" " augroup LargeFile 
+"  autocmd vimrc BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile * 1024 * 10 || f == -2 | call BigFile() | endif
+" " augroup END
+"
+" function! BigFile()
+"   let b:syntastic_mode = 'passive'
+"   " SyntasticReset
+"   " echo 'disabled syntastic in files larger than 1mb'
+" endfunction
 
 
 "Plug 'heavenshell/vim-jsdoc'
@@ -420,11 +437,12 @@ Plug 'jszakmeister/vim-togglecursor'
 " Plug 'yonchu/accelerated-smooth-scroll'
 Plug 'joeytwiddle/sexy_scroller.vim'
 
+"Plug 'lornix/vim-scrollbar'
+
 " 多鼠标
 "Plug 'terryma/vim-multiple-cursors'
 "let g:multi_cursor_next_key='<C-n>'
 
-"Plug 'lornix/vim-scrollbar'
 
 " guiset and tmux
 if has('gui_running')
