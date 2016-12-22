@@ -62,12 +62,11 @@ windows:
       panes:
         - #vim
         # - # npm run start
-  # - pajk-plugin:
-  #     root: ~/c/pa/pajk-plugin
-  #     layout: main-vertical
-  #     panes:
-  #       -
-  #       - npm run start
+  - pajk-plugin:
+      root: ~/c/pa/pajk-plugin
+      layout: main-vertical
+      panes:
+        -
   # - troy-web:
   #     root: ~/c/pa/troy-web
   #     layout: main-vertical
@@ -80,12 +79,13 @@ windows:
       layout: main-vertical
       panes:
         - #vim
+        - npm run server
         # - #npm run start
-  - posts:
-      root: ~/c/posts
-      layout: main-vertical
-      panes:
-        - vim
+  # - posts:
+  #     root: ~/c/pbdm/posts
+  #     layout: main-vertical
+  #     panes:
+  #       - vim
   - playground:
       root: ~/c/playground
       layout: main-vertical
