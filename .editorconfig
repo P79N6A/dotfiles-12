@@ -1,0 +1,11 @@
+;.editorconfig
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+; curly_bracket_next_line = false
+; brace_style = collapse-preserve-inline
+e4x = true
+; [**.jsx]

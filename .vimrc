@@ -59,6 +59,7 @@ set shiftwidth=2 " 默认缩进2个空格
 set tabstop=2 " 制表符占2个空格
 set softtabstop=2 " 敲入tab键时实际占有的列数
 set autoindent smartindent shiftround "缩进配置
+" set cindent
 set expandtab " 用spaces替换tabs
 set smarttab " 自动缩进
 "set nowrap " 不要换行
@@ -260,6 +261,12 @@ Plug 'majutsushi/tagbar'
   "nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 Plug 'ervandew/supertab'
 
+" some times it's better than '=='
+Plug 'maksimr/vim-jsbeautify'
+" map <c-b> :call JsxBeautify()<cr>
+autocmd vimrc FileType javascript vnoremap <buffer> ; :call RangeJsxBeautify()<cr>
+" autocmd vimrc FileType jsx vnoremap <buffer> ; :call RangeJsxBeautify()<cr>
+
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
   " autocmd vimrc FileType js
   "   \ if &omnifunc != '' |
@@ -406,7 +413,7 @@ Plug 'sheerun/vim-polyglot', { 'do': './build'}
 
 " Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 "   "for react jsx, JSX in .js files
-"   let g:jsx_ext_required = 0
+  " let g:jsx_ext_required = 0
 
 "vim-react-snippets(replaced by mlaursen/vim-react-snippets)
   "Plug 'justinj/vim-react-snippets'
