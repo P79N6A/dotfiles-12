@@ -246,6 +246,13 @@ Plug 'majutsushi/tagbar'
   " nmap <F8> :TagbarToggle<CR>
   " nmap <leader>t :TagbarToggle<CR>
   nmap <C-t> :TagbarToggle<CR>
+  let g:tagbar_type_markdown = {
+      \ 'ctagstype' : 'markdown',
+      \ 'kinds' : [
+          \ 'h:Heading_L1',
+          \ 'i:Heading_L2',
+      \ ]
+  \ }
 
 " 后悔药
 "Plug 'mbbill/undotree'
