@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 #   --userconfig=$HOME/.cnpmrc"
 #
 alias pnpm="cnpm --registry=http://10.0.128.44:7001 \
-  --registryweb=http://10.0.128.44:7002 \
+  --registryweb=http://10.0.128.48:7002 \
   --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/ \
   --cache=$HOME/.pnpm/.cache/pnpm \
   --fsevents_binary_host_mirror=https://npm.taobao.org/mirrors/fsevents/ \
