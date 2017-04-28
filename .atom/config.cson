@@ -114,17 +114,14 @@
   "highlight-selected": {}
   jumpy:
     highContrast: true
-  linter:
-    errorPanelHeight: 22
-    showErrorPanel: false
-    showErrorTabLine: true
-    showErrorTabProject: false
+  linter: {}
   "linter-eslint":
     globalNodePath: "/usr/local"
     showRuleIdInMessage: false
     useGlobalEslint: true
   "linter-jsxhint":
     harmony: true
+  "linter-ui-default": {}
   "merge-conflicts": {}
   minimap:
     absoluteMode: true
@@ -167,7 +164,8 @@
     WindowHeight: 100
   "tool-bar":
     position: "Left"
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   "vim-mode": {}
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"

@@ -32,6 +32,22 @@ windows:
       layout: main-vertical
       panes:
         -
+  - remote:
+      layout: main-vertical
+      panes:
+        - ssh root@10.153.164.250
+        - ssh iqiyi@10.11.79.86
+  - iqiyi-react:
+      root: ~/c/qy/iqiyi-react
+      layout: main-vertical
+      panes:
+        - #vim
+  - apm:
+      root: ~/c/qy/apm
+      layout: main-vertical
+      panes:
+        - #vim
+        - yarn start
         # - vim ~/c/pbdm/posts/others/2016-09-01-temp.md
   # - process:
   #     layout: even-horizontal
@@ -39,34 +55,34 @@ windows:
   #       - cd ~/c/pa/health-circle && npm run start
   #       - cd ~/c/pa/overwatch && npm run start
   #       - cd ~/c/pa/shiva && npm run start
-  - pajk-zhilin:
-      root: ~/c/pa/pajk-zhilin
-      layout: main-vertical
-      panes:
-        - #vim
-  - health-circle:
-      root: ~/c/pa/health-circle
-      layout: main-vertical
-      panes:
-        - #vim
-        # - # npm run start
-  - overwatch:
-      root: ~/c/pa/overwatch
-      layout: main-vertical
-      panes:
-        - #vim
-        # - # npm run start
-  - shiva:
-      root: ~/c/pa/shiva
-      layout: main-vertical
-      panes:
-        - #vim
-        # - # npm run start
-  - pajk-plugin:
-      root: ~/c/pa/pajk-plugin
-      layout: main-vertical
-      panes:
-        -
+  # - pajk-zhilin:
+  #     root: ~/c/pa/pajk-zhilin
+  #     layout: main-vertical
+  #     panes:
+  #       - #vim
+  # - health-circle:
+  #     root: ~/c/pa/health-circle
+  #     layout: main-vertical
+  #     panes:
+  #       - #vim
+  #       # - # npm run start
+  # - overwatch:
+  #     root: ~/c/pa/overwatch
+  #     layout: main-vertical
+  #     panes:
+  #       - #vim
+  #       # - # npm run start
+  # - money:
+  #     root: ~/c/pa/money
+  #     layout: main-vertical
+  #     panes:
+  #       - #vim
+  #       # - # npm run start
+  # - pajk-plugin:
+  #     root: ~/c/pa/pajk-plugin
+  #     layout: main-vertical
+  #     panes:
+  #       -
   # - troy-web:
   #     root: ~/c/pa/troy-web
   #     layout: main-vertical
