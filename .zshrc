@@ -100,8 +100,8 @@ source $ZSH/oh-my-zsh.sh
 #
 alias qnpm="cnpm --registry=http://10.221.87.112:7001 \
   --registryweb=http://10.221.87.112:7002 \
-  --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/ \
-  --cache=$HOME/.pnpm/.cache/pnpm \
+  --proxy http://10.221.87.112:7001 \
+  --cache=$HOME/.qnpm/.cache/qnpm \
   --fsevents_binary_host_mirror=https://npm.taobao.org/mirrors/fsevents/ \
   --disturl=https://npm.taobao.org/dist"
 

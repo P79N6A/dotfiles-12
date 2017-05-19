@@ -132,7 +132,6 @@
   nuclide:
     "nuclide-working-sets": {}
   "one-dark-ui":
-    layoutMode: "Compact"
     tabSizing: "Even"
   pigments: {}
   "project-manager": {}
