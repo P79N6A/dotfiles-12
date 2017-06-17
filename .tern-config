@@ -1,8 +1,28 @@
 {
   "libs": [
-    "browser",
-    "ecma6"
+    "browser"
+  ],
+  "dontLoad": [
+    "node_modules/**",
+    "dist/**",
+    "public/**"
   ],
   "plugins": {
+    "doc_comment": true,
+    "complete_strings": {
+      "maxLength": 15
+    },
+    "node": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    },
+    "node_resolve": {},
+    "modules": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    },
+    "es_modules": {}
   }
 }
