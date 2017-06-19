@@ -10,15 +10,22 @@
     rippleAccentColor: true
     slimScrollbar: true
     tabSize: "Small"
+  "atom-package-deps":
+    ignored: []
+  "atom-ternjs": {}
+  "autocomplete-modules":
+    babelPluginModuleResolver: true
   build:
     panelOrientation: "Right"
     scrollOnError: true
     statusBar: "Disable"
   core:
+    automaticallyUpdate: false
     customFileTypes:
       "source.ini": [
         ".buckconfig"
         ".flowconfig"
+        ".hgrc"
       ]
       "source.json": [
         ".arcconfig"
@@ -30,49 +37,24 @@
     disabledPackages: [
       "Sublime-Style-Column-Selection"
       "expose"
-      "git-history"
-      "imdone-atom"
-      "atom-jade"
       "symbols-tree-view"
-      "minimap-autohide"
-      "jumpy"
       "auto-detect-indentation"
       "build-gulp"
-      "minimap-highlight-selected"
-      "atom-beautify"
-      "term2"
       "run-command2"
-      "terminal-status"
       "build"
-      "terminal-plus"
-      "elastic-tabstops"
-      "markdown-toc"
-      "atom-terminal-panel"
-      "nuclide"
-      "activate-power-mode"
       "metrics"
       "spell-check"
       "minimap"
-      "pigments"
-      "tool-bar"
-      "flex-tool-bar"
       "background-tips"
-      "bookmarks"
       "go-to-line"
-      "git-time-machine"
       "dev-live-reload"
-      "link"
-      "merge-conflicts"
       "vim-mode-zz"
-      "wakatime"
-      "language-diff"
-      "markdown-scroll-sync"
-      "node-debugger"
-      "react"
-      "project-manager"
       "whitespace"
       "autosave"
       "exception-reporting"
+      "welcome"
+      "tree-view"
+      "term3"
     ]
     ignoredNames: [
       ".git"
@@ -121,7 +103,10 @@
     useGlobalEslint: true
   "linter-jsxhint":
     harmony: true
-  "linter-ui-default": {}
+  "linter-markdown":
+    presetRecommendedWithoutConfig: false
+  "linter-ui-default":
+    panelHeight: 69
   "merge-conflicts": {}
   minimap:
     absoluteMode: true
@@ -134,23 +119,24 @@
   "one-dark-ui":
     tabSizing: "Even"
   pigments: {}
+  "platformio-ide-terminal":
+    core:
+      autoRunCommand: "export PATH=$(cat /etc/paths | xargs | tr \" \" :)"
   "project-manager": {}
   react: {}
-  "relative-numbers":
-    showAbsoluteNumbers: true
+  "relative-numbers": {}
   "run-command2": {}
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
     syncHorizontalScroll: true
   "symbols-tree-view":
     autoToggle: true
   tabs:
     enableVcsColoring: true
-  term2:
-    cursorBlink: false
   term3:
     cursorBlink: false
     fontFamily: "Hack"
@@ -165,7 +151,8 @@
     position: "Left"
   "tree-view":
     hideVcsIgnoredFiles: true
-  "vim-mode": {}
+  "vim-mode-plus":
+    startInInsertMode: true
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
   welcome:

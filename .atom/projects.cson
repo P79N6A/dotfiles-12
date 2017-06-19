@@ -3,24 +3,14 @@ pajkplugin:
   paths: [
     "/Users/bopeng/c/pa/pajk-plugin"
   ]
-pbdm:
-  title: "Pbdm"
-  paths: [
-    "/Users/bopeng/c/pbdm"
-  ]
-"playground-react":
-  title: "playground-react"
-  paths: [
-    "/Users/bopeng/c/playground/react"
-  ]
-paotuan:
-  title: "Paotuan"
-  paths: [
-    "/Users/bopeng/c/pa/activity-h5/paotuan"
-  ]
 posts:
-  title: "Posts"
+  title: "pbdm and posts"
   paths: [
-    "/Users/bopeng/c/pbdm/posts"
     "/Users/bopeng/c/pbdm"
+    "/Users/bopeng/c/posts"
+  ]
+playground:
+  title: "playground"
+  paths: [
+    "/Users/bopeng/c/playground"
   ]

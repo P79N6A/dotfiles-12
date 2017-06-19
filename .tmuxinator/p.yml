@@ -37,6 +37,11 @@ windows:
       panes:
         - ssh root@10.153.164.250
         - ssh iqiyi@10.11.79.86
+  - RNLibrary:
+      root: ~/c/qy/RNLibrary
+      layout: main-vertical
+      panes:
+        - 
   - QYReact:
       root: ~/c/qy/QYReact
       layout: main-vertical
@@ -54,21 +59,15 @@ windows:
   #       - cd ~/c/pa/health-circle && npm run start
   #       - cd ~/c/pa/overwatch && npm run start
   #       - cd ~/c/pa/shiva && npm run start
-  - posts:
-      root: ~/c/pbdm/posts/others
-      layout: main-vertical
-      panes:
-        - vim
-        # - #npm run start
   - pbdm:
       root: ~/c/pbdm
       layout: main-vertical
       panes:
-        - 
-        - npm run server
+        -
+        - gitbook serve
         # - #npm run start
   - playground:
-      root: ~/c/playground
+      root: ~/c/playground/browser
       layout: main-vertical
       panes:
         - #vim

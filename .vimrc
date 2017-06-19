@@ -448,8 +448,8 @@ Plug 'jszakmeister/vim-togglecursor'
 " Plug 'CodeFalling/fcitx-vim-osx'
 
 " 平滑滚动
+" Plug 'joeytwiddle/sexy_scroller.vim'
 " Plug 'yonchu/accelerated-smooth-scroll'
-Plug 'joeytwiddle/sexy_scroller.vim'
 
 "Plug 'lornix/vim-scrollbar'
 

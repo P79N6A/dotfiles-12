@@ -8,8 +8,10 @@
   'ctrl-c': 'core:close'
 'atom-text-editor':
   'ctrl-alt-j': 'term3:open-split-down'
+  'ctrl-a -': 'term3:open-split-down'
   'ctrl-alt-k': 'term3:open-split-up'
   'ctrl-alt-h': 'term3:open-split-left'
+  'ctrl-a \\': 'term3:open-split-right'
   'ctrl-alt-l': 'term3:open-split-right'
 '.tree-view':
   'i': 'tree-view:toggle-vcs-ignored-files'
@@ -18,9 +20,9 @@
 '.platform-darwin':
   'ctrl-p': 'fuzzy-finder:toggle-file-finder',
   'ctrl-w w': 'nerd-treeview:toggle-focus',
-'atom-text-editor.vim-mode:not(.insert-mode)':
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'ctrl-w w': 'nerd-treeview:toggle-focus',
-'atom-text-editor.vim-mode':
+'atom-text-editor.vim-mode-plus':
   'ctrl-c': 'core:close'
-'.platform-darwin atom-text-editor.vim-mode:not(.normal-mode)':
+'.platform-darwin atom-text-editor.vim-mode-plus:not(.normal-mode)':
   'ctrl-c': 'core:close'
