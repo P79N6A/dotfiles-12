@@ -71,7 +71,7 @@ windows:
       layout: main-vertical
       panes:
         - #vim
-        - npm run start
+        # - npm run start
   - config:
       root: ~/dotfiles
       layout: tiled

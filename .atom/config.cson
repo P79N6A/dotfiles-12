@@ -55,6 +55,7 @@
       "welcome"
       "tree-view"
       "term3"
+      "markdown-mindmap"
     ]
     ignoredNames: [
       ".git"
@@ -107,6 +108,8 @@
     presetRecommendedWithoutConfig: false
   "linter-ui-default":
     panelHeight: 69
+  "markdown-mindmap":
+    autoOpen: true
   "merge-conflicts": {}
   minimap:
     absoluteMode: true
