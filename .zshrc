@@ -98,9 +98,8 @@ source $ZSH/oh-my-zsh.sh
 #   --disturl=https://npm.taobao.org/dist \
 #   --userconfig=$HOME/.cnpmrc"
 #
-alias qnpm="cnpm --registry=http://10.221.87.112:7001 \
-  --registryweb=http://10.221.87.112:7002 \
-  --proxy http://10.221.87.112:7001 \
+alias qnpm="cnpm --registry=http://npm.qiyi.domain:7001 \
+  --registryweb=http://npm.qiyi.domain \
   --cache=$HOME/.qnpm/.cache/qnpm \
   --fsevents_binary_host_mirror=https://npm.taobao.org/mirrors/fsevents/ \
   --disturl=https://npm.taobao.org/dist"
