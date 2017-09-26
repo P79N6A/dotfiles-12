@@ -36,12 +36,23 @@ windows:
       layout: main-vertical
       panes:
         - ssh root@10.153.164.250
-        - ssh iqiyi@10.11.79.86
-  - RNLibrary:
-      root: ~/c/qy/RNLibrary
+        # - ssh iqiyi@10.11.79.86
+        - ssh root@10.127.18.211
+  # - RNLibrary:
+  #     root: ~/c/qy/RNLibrary
+  #     layout: main-vertical
+  #     panes:
+  #       - 
+  - rnweb:
+      root: ~/c/qy/react-native-web
       layout: main-vertical
       panes:
-        - 
+        -
+  - mp:
+      root: ~/c/qy/QiyiMP_demo
+      layout: main-vertical
+      panes:
+        -
   - QYReact:
       root: ~/c/qy/QYReact
       layout: main-vertical
@@ -52,6 +63,11 @@ windows:
       layout: main-vertical
       panes:
         -
+  # - ACG:
+  #     root: ~/c/qy/Front.H5.ACG
+  #     layout: main-vertical
+  #     panes:
+        # -
         # - vim ~/c/pbdm/posts/others/2016-09-01-temp.md
   # - process:
   #     layout: even-horizontal
@@ -64,7 +80,7 @@ windows:
       layout: main-vertical
       panes:
         -
-        - gitbook serve
+        # - gitbook serve
         # - #npm run start
   - playground:
       root: ~/c/playground/browser
@@ -77,6 +93,7 @@ windows:
       layout: tiled
       # layout: even-horizontal
       panes:
+        # - ls -la
         - vim ~/.vimrc
         - vim ~/.zshrc
         - vim ~/.tmux.conf

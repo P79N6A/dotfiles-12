@@ -20,7 +20,6 @@
     scrollOnError: true
     statusBar: "Disable"
   core:
-    automaticallyUpdate: false
     customFileTypes:
       "source.ini": [
         ".buckconfig"
@@ -53,9 +52,9 @@
       "autosave"
       "exception-reporting"
       "welcome"
-      "tree-view"
       "term3"
       "markdown-mindmap"
+      "nuclide"
     ]
     ignoredNames: [
       ".git"
