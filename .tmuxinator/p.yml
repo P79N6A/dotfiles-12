@@ -1,7 +1,7 @@
 # ~/.tmuxinator/p.yml
 
 name: p
-root: ~/c/
+root: ~/c
 
 # Optional tmux socket
 # socket_name: foo
@@ -32,37 +32,44 @@ windows:
       layout: main-vertical
       panes:
         -
-  - qy-remote:
-      layout: main-vertical
-      panes:
-        - ssh root@10.153.164.250
-        # - ssh iqiyi@10.11.79.86
-        - ssh root@10.127.18.211
   # - RNLibrary:
   #     root: ~/c/qy/RNLibrary
   #     layout: main-vertical
   #     panes:
   #       - 
-  - rnweb:
-      root: ~/c/qy/react-native-web
+  # - rn:
+  #     root: ~/c/qy/react-native-web
+  #     layout: main-vertical
+  #     panes:
+  #       -
+  #       - cd QYReact
+  - jssdk:
+      root: ~/c/qy/IQIYI-JSSDK
       layout: main-vertical
       panes:
         -
   - mp:
-      root: ~/c/qy/QiyiMP_demo
-      layout: main-vertical
+      root: ~/c/qy/mp-fe
+      # layout: main-vertical
+      layout: tiled
       panes:
         -
-  - QYReact:
-      root: ~/c/qy/QYReact
-      layout: main-vertical
-      panes:
-        -
+        # - cd mp-fe-component && npm run start
+        # - cd mp-fe-core && npm run start
+        # - cd mp-fe-demo && npm run start
+  # - QYReact:
+  #     root: ~/c/qy/QYReact
+  #     layout: main-vertical
+  #     panes:
+  #       -
   - apm:
       root: ~/c/qy/apm
       layout: main-vertical
       panes:
         -
+        - ssh root@10.153.164.250
+        # - ssh iqiyi@10.11.79.86
+        # - ssh root@10.127.18.211
   # - ACG:
   #     root: ~/c/qy/Front.H5.ACG
   #     layout: main-vertical
@@ -76,18 +83,18 @@ windows:
   #       - cd ~/c/pa/overwatch && npm run start
   #       - cd ~/c/pa/shiva && npm run start
   - pbdm:
-      root: ~/c/pbdm
+      root: ~/c/pbdm.github.com
       layout: main-vertical
       panes:
-        -
+        - npm run start
         # - gitbook serve
         # - #npm run start
-  - playground:
-      root: ~/c/playground/browser
-      layout: main-vertical
-      panes:
-        - #vim
-        # - npm run start
+  # - playground:
+  #     root: ~/c/playground/browser
+  #     layout: main-vertical
+  #     panes:
+  #       - #vim
+  #       # - npm run start
   - config:
       root: ~/dotfiles
       layout: tiled
