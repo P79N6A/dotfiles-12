@@ -19,9 +19,11 @@
 [https]
 [http]
 # proxy = http://127.0.0.1:8787
+# large file storage
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
 	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 [merge]
 	tool = vimdiff

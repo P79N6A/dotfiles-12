@@ -111,6 +111,7 @@ alias server='python -m SimpleHTTPServer'
 # alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 # alias vim="mvim -v"
 alias vi='vim --noplugin'
+alias no-cors - 'open -a Google\ Chrome\ Canary --args --disable-web-security'
 
 export PATH="/usr/local/sbin:$PATH"
 
@@ -136,3 +137,4 @@ alias noproxy="export http_proxy=\"\"\
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:~/c/vendor/depot_tools
