@@ -43,13 +43,18 @@ windows:
   #     panes:
   #       -
   #       - cd QYReact
-  - jssdk:
-      root: ~/c/qy/IQIYI-JSSDK
+  # - jssdk:
+  #     root: ~/c/qy/IQIYI-JSSDK
+  #     layout: main-vertical
+  #     panes:
+  #       -
+  - qypages:
+      root: ~/c/qy/QYPages
       layout: main-vertical
       panes:
         -
   - mp:
-      root: ~/c/qy/mp-fe
+      root: ~/c/qy/compiler-wx
       # layout: main-vertical
       layout: tiled
       panes:
@@ -67,7 +72,7 @@ windows:
       layout: main-vertical
       panes:
         -
-        - ssh root@10.153.164.250
+        - qyapm
         # - ssh iqiyi@10.11.79.86
         # - ssh root@10.127.18.211
   # - ACG:
@@ -86,7 +91,9 @@ windows:
       root: ~/c/pbdm.github.com
       layout: main-vertical
       panes:
-        - npm run start
+        # - npm run start
+        -
+        - npm run http
         # - gitbook serve
         # - #npm run start
   # - playground:
@@ -95,6 +102,12 @@ windows:
   #     panes:
   #       - #vim
   #       # - npm run start
+  - vps:
+      root: ~/c/
+      layout: main-vertical
+      panes: 
+        - ssh ubuntu@118.24.148.74
+        - ssh -p 27589 97.64.120.53
   - config:
       root: ~/dotfiles
       layout: tiled

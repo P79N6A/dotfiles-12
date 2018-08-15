@@ -56,7 +56,8 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux osx z docker zsh-syntax-highlighting)
+# plugins=(zsh-completions zsh-autosuggestions git tmux osx z docker zsh-syntax-highlighting)
+plugins=(tmux osx z docker zsh-syntax-highlighting)
 
 # User configuration
 
@@ -111,7 +112,8 @@ alias server='python -m SimpleHTTPServer'
 # alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 # alias vim="mvim -v"
 alias vi='vim --noplugin'
-alias no-cors - 'open -a Google\ Chrome\ Canary --args --disable-web-security'
+alias cors='open -a Google\ Chrome\ Canary --args --disable-web-security'
+# alias tig='tig --all'
 
 export PATH="/usr/local/sbin:$PATH"
 
@@ -121,10 +123,12 @@ export DISABLE_AUTO_TITLE=true
 alias mux='tmuxinator'
 
 # proxy
-alias proxy="export http_proxy=\"http://127.0.0.1:1080\" \
-  export https_proxy=\"http://127.0.0.1:1080\""
-alias noproxy="export http_proxy=\"\"\
-  export https_proxy=\"\""
+# alias proxy="export http_proxy=\"socks5://127.0.0.1:1080\" \
+  # export https_proxy=\"socks5://127.0.0.1:1080\""
+# alias noproxy="export http_proxy=\"\"\
+#   export https_proxy=\"\""
+alias proxy="export all_proxy=\"socks5://127.0.0.1:1080\""
+alias noproxy="export all_proxy=\"\""
 
 # https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
 # infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
@@ -138,3 +142,11 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:~/c/vendor/depot_tools
+
+# https://github.com/notwaldorf/tiny-care-terminal
+export TTC_REPOS='/Users/bopeng/c'
+export TTC_REPOS_DEPTH=2
+export TTC_WEATHER='shanghai'
+export TTC_APIKEYS=false
+
+alias qyapm='export QB=root,10.153.164.250,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
