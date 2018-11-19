@@ -28,7 +28,7 @@ root: ~/c
 # post: tmux -CC attach -t p
 
 windows:
-  - editor:
+  - m:
       layout: main-vertical
       panes:
         -
@@ -48,20 +48,20 @@ windows:
   #     layout: main-vertical
   #     panes:
   #       -
-  - qypages:
-      root: ~/c/qy/QYPages
+  - adapter:
+      root: ~/c/qy/adapter
       layout: main-vertical
       panes:
         -
-  - mp:
-      root: ~/c/qy/compiler-wx
-      # layout: main-vertical
-      layout: tiled
-      panes:
-        -
-        # - cd mp-fe-component && npm run start
-        # - cd mp-fe-core && npm run start
-        # - cd mp-fe-demo && npm run start
+  # - mp:
+  #     root: ~/c/qy/compiler-wx
+  #     # layout: main-vertical
+  #     layout: tiled
+  #     panes:
+  #       -
+  #       # - cd mp-fe-component && npm run start
+  #       # - cd mp-fe-core && npm run start
+  #       # - cd mp-fe-demo && npm run start
   # - QYReact:
   #     root: ~/c/qy/QYReact
   #     layout: main-vertical

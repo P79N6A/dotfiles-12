@@ -67,7 +67,8 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# especial for git
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -150,3 +151,4 @@ export TTC_WEATHER='shanghai'
 export TTC_APIKEYS=false
 
 alias qyapm='export QB=root,10.153.164.250,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
+alias qypages='export QB=root,10.121.130.224,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
