@@ -107,7 +107,7 @@ windows:
       layout: main-vertical
       panes: 
         - ssh ubuntu@118.24.148.74
-        - ssh -p 27589 97.64.120.53
+        - ssh -p 27589 root@97.64.120.53
   - config:
       root: ~/dotfiles
       layout: tiled

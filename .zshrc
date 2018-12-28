@@ -124,12 +124,24 @@ export DISABLE_AUTO_TITLE=true
 alias mux='tmuxinator'
 
 # proxy
-# alias proxy="export http_proxy=\"socks5://127.0.0.1:1080\" \
-  # export https_proxy=\"socks5://127.0.0.1:1080\""
-# alias noproxy="export http_proxy=\"\"\
-#   export https_proxy=\"\""
-alias proxy="export all_proxy=\"socks5://127.0.0.1:1080\""
-alias noproxy="export all_proxy=\"\""
+# TODO use for here...
+# https://unix.stackexchange.com/questions/212894/whats-the-right-format-for-the-http-proxy-environment-variable-caps-or-no-ca
+# 这个设置没有官方的标准, 所以最好都设置上
+# set | grep -i proxy 可以查看当前的 proxy 设置
+alias proxy="export http_proxy=\"socks5://127.0.0.1:1080\" \
+  https_proxy=\"socks5://127.0.0.1:1080\" \
+  all_proxy=\"socks5://127.0.0.1:1080\" \
+  HTTP_PROXY=\"socks5://127.0.0.1:1080\" \
+  HTTPS_PROXY=\"socks5://127.0.0.1:1080\" \
+  ALL_PROXY=\"socks5://127.0.0.1:1080\""
+alias noproxy="unset http_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY"
+# 用于 betwixt
+alias bproxy="export http_proxy=\"http://127.0.0.1:8008\" \
+  https_proxy=\"http://127.0.0.1:8008\" \
+  all_proxy=\"http://127.0.0.1:8008\" \
+  HTTP_PROXY=\"http://127.0.0.1:8008\" \
+  HTTPS_PROXY=\"http://127.0.0.1:8008\" \
+  ALL_PROXY=\"http://127.0.0.1:8008\""
 
 # https://github.com/neovim/neovim/wiki/FAQ#my-ctrl-h-mapping-doesnt-work
 # infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
@@ -152,6 +164,7 @@ export TTC_APIKEYS=false
 
 alias qyapm='export QB=root,10.153.164.250,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
 alias qypages='export QB=root,10.121.130.224,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
+alias adapter='export QB=root,10.110.86.160,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT="/Users/bopeng/c/temp/cocos/cocos2d-x/tools/cocos2d-console/bin"
@@ -169,3 +182,6 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 export ANDROID_SDK_ROOT="/Users/bopeng/Library/Android/sdk"
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+# ANT for cocos builder
+export ANT_ROOT=/usr/local/bin
