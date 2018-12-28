@@ -27,3 +27,5 @@
 	process = git-lfs filter-process
 [merge]
 	tool = vimdiff
+[includeIf "gitdir:~/c/qy/"]
+  path = .gitconfig-qy
