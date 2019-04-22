@@ -49,12 +49,21 @@ windows:
   #     panes:
   #       -
   - adapter:
-      root: ~/c/qy/adapter
+      root: ~/c/qy/mini-game/cube-dashboard
       layout: main-vertical
       panes:
-        -
+        - 
   # - mp:
-  #     root: ~/c/qy/compiler-wx
+  #     root: ~/c/qy/mp/compiler-wx
+  #     # layout: main-vertical
+  #     layout: tiled
+  #     panes:
+  #       -
+  #       # - cd mp-fe-component && npm run start
+  #       # - cd mp-fe-core && npm run start
+  #       # - cd mp-fe-demo && npm run start
+  # - swan:
+  #     root: ~/c/qy/mp
   #     # layout: main-vertical
   #     layout: tiled
   #     panes:
@@ -102,6 +111,10 @@ windows:
   #     panes:
   #       - #vim
   #       # - npm run start
+  - editor:
+      root: ~/c/editor
+      layout: main-vertical
+      panes:
   - vps:
       root: ~/c/
       layout: main-vertical

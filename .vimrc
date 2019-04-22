@@ -379,6 +379,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "   let g:syntastic_check_on_wq = 1
 "   let g:syntastic_javascript_checkers = ['eslint']
 "   " make eslint faster
+"   " need to install https://www.npmjs.com/package/eslint_d
 "   let g:syntastic_javascript_eslint_exec = 'eslint_d'
 "   let g:syntastic_warning_symbol='W'
 "   let g:syntastic_error_symbol = 'E'

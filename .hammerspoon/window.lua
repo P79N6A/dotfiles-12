@@ -1,4 +1,4 @@
--- notice: 需要权限
+-- notice: 需要权限(Accsssiibility)
 hypershift = {"alt", "ctrl"}
 
 hs.hotkey.bind(hypershift, "n", function()

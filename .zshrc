@@ -165,6 +165,7 @@ export TTC_APIKEYS=false
 alias qyapm='export QB=root,10.153.164.250,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
 alias qypages='export QB=root,10.121.130.224,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
 alias adapter='export QB=root,10.110.86.160,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
+alias cube='export QB=root,10.57.211.158,22;ssh pengbo@jumpbox.qiyi.domain -o SendEnv=QB'
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT="/Users/bopeng/c/temp/cocos/cocos2d-x/tools/cocos2d-console/bin"

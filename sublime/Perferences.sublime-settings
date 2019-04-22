@@ -18,12 +18,79 @@
 		"node_modules/"
 	],
 	"bold_folder_labels": true,
+	"color_scheme": "Packages/Theme - One Dark/One Dark.tmTheme",
 	"drag_text": false,
+	"extra_file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"extra_folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS"
+	],
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace",
+		"/Users/bopeng/c/qy/apm/.DS_Store"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"/Users/bopeng/c/qy/apm/node_modules",
+		"/Users/bopeng/c/qy/apm/build",
+		"/Users/bopeng/c/qy/apm/temp"
+	],
 	"font_size": 12,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"SublimeLinter",
+		"SublimeLinter-eslint"
 	],
 	"rulers":
 	[
@@ -31,7 +98,9 @@
 	],
 	"show_encoding": true,
 	"tab_size": 2,
+	"theme": "One Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
+	"vintage_lines.force_mode": true,
 	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
 	"word_wrap": "true"
 }
